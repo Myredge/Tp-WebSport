@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebUI.PagesWeb.Participant
+namespace WebUI.PagesWeb.Administration.Membres
 {
-    public partial class recuperationMotdePasse : System.Web.UI.Page
+    public partial class AjouterMembre : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -8,5 +8,6 @@ namespace BusinessService
 {
     public class Class1
     {
+        // http://stackoverflow.com/questions/8008389/how-to-convert-datatable-to-class-object
     }
 }

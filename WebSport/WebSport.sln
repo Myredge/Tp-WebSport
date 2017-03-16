@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessService", "BusinessService\BusinessService.csproj", "{AC2B683F-48DE-4027-BF2B-2F23DC1E316D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BusinessService\BLL.csproj", "{AC2B683F-48DE-4027-BF2B-2F23DC1E316D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{F32FB745-7622-46CA-9EBA-219E80FBC247}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{B4097D19-CD3F-46E2-96DC-4AA45D673C2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{34FAA23D-18AF-435E-99FE-AB91B99E55C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DataAccess\DAL.csproj", "{34FAA23D-18AF-435E-99FE-AB91B99E55C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{44B82009-6765-427F-A52A-B53E17049278}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "BusinessObject\BO.csproj", "{44B82009-6765-427F-A52A-B53E17049278}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

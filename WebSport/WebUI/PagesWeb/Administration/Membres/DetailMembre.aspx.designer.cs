@@ -7,9 +7,9 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace WebUI.PagesWeb.Participant {
+namespace WebUI.PagesWeb.Administration.Membres {
     
     
-    public partial class recuperationMotdePasse {
+    public partial class DetailMembre {
     }
 }

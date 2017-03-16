@@ -7,9 +7,9 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace WebUI.PagesWeb.Participant {
+namespace WebUI.PagesWeb.Administration {
     
     
-    public partial class WebForm1 {
+    public partial class Dashbord {
     }
 }

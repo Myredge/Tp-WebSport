@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BusinessObject
 {
-    public class Class1
+    public class Role
     {
-    }
+        public Role() { }
+
+        private int id { get; set; }
+        private String role { get; set; }
+}
 }

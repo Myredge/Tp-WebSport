@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebUI.PagesWeb.Participant
+namespace WebUI.PagesWeb
 {
-    public partial class Inscription : System.Web.UI.Page
+    public partial class MotDePasseOublie : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

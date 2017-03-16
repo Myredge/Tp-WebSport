@@ -219,13 +219,17 @@
     <Content Include="PagesWeb\Administration\Membres\AjouterMembre.aspx" />
     <Content Include="PagesWeb\Administration\Membres\DetailMembre.aspx" />
     <Content Include="PagesWeb\Administration\Membres\ListeMembres.aspx" />
-    <Content Include="PagesWeb\Participant\connexion.aspx" />
-    <Content Include="PagesWeb\Participant\Inscription.aspx" />
+    <Content Include="PagesWeb\Connexion.aspx" />
+    <Content Include="PagesWeb\Inscription.aspx" />
+    <Content Include="PagesWeb\MotDePasseOublie.aspx" />
+    <Content Include="PagesWeb\Participant\Classement\Classement.aspx" />
+    <Content Include="PagesWeb\Participant\Courses\DetailCourseDisponible.aspx" />
+    <Content Include="PagesWeb\Participant\Courses\DetailCourseTerminee.aspx" />
+    <Content Include="PagesWeb\Participant\Courses\ListeCoursesDisponible.aspx" />
+    <Content Include="PagesWeb\Participant\Courses\ListeCoursesTerminees.aspx" />
     <Content Include="PagesWeb\Participant\MasterPageParticipant.Master" />
     <Content Include="PagesWeb\Administration\MasterPageAdmin.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="PagesWeb\Participant\recuperationMotdePasse.aspx" />
-    <Content Include="PagesWeb\Participant\WebForm1.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -478,19 +482,61 @@
     <Compile Include="PagesWeb\Administration\Membres\ListeMembres.aspx.designer.cs">
       <DependentUpon>ListeMembres.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Participant\connexion.aspx.cs">
-      <DependentUpon>connexion.aspx</DependentUpon>
+    <Compile Include="PagesWeb\Connexion.aspx.cs">
+      <DependentUpon>Connexion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Participant\connexion.aspx.designer.cs">
-      <DependentUpon>connexion.aspx</DependentUpon>
+    <Compile Include="PagesWeb\Connexion.aspx.designer.cs">
+      <DependentUpon>Connexion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Participant\Inscription.aspx.cs">
+    <Compile Include="PagesWeb\Inscription.aspx.cs">
       <DependentUpon>Inscription.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Participant\Inscription.aspx.designer.cs">
+    <Compile Include="PagesWeb\Inscription.aspx.designer.cs">
       <DependentUpon>Inscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\MotDePasseOublie.aspx.cs">
+      <DependentUpon>MotDePasseOublie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\MotDePasseOublie.aspx.designer.cs">
+      <DependentUpon>MotDePasseOublie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Classement\Classement.aspx.cs">
+      <DependentUpon>Classement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Classement\Classement.aspx.designer.cs">
+      <DependentUpon>Classement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Courses\DetailCourseDisponible.aspx.cs">
+      <DependentUpon>DetailCourseDisponible.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Courses\DetailCourseDisponible.aspx.designer.cs">
+      <DependentUpon>DetailCourseDisponible.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Courses\DetailCourseTerminee.aspx.cs">
+      <DependentUpon>DetailCourseTerminee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Courses\DetailCourseTerminee.aspx.designer.cs">
+      <DependentUpon>DetailCourseTerminee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Courses\ListeCoursesDisponible.aspx.cs">
+      <DependentUpon>ListeCoursesDisponible.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Courses\ListeCoursesDisponible.aspx.designer.cs">
+      <DependentUpon>ListeCoursesDisponible.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Courses\ListeCoursesTerminees.aspx.cs">
+      <DependentUpon>ListeCoursesTerminees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Participant\Courses\ListeCoursesTerminees.aspx.designer.cs">
+      <DependentUpon>ListeCoursesTerminees.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesWeb\Participant\MasterPageParticipant.Master.cs">
       <DependentUpon>MasterPageParticipant.Master</DependentUpon>
@@ -498,20 +544,6 @@
     </Compile>
     <Compile Include="PagesWeb\Participant\MasterPageParticipant.Master.designer.cs">
       <DependentUpon>MasterPageParticipant.Master</DependentUpon>
-    </Compile>
-    <Compile Include="PagesWeb\Participant\recuperationMotdePasse.aspx.cs">
-      <DependentUpon>recuperationMotdePasse.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PagesWeb\Participant\recuperationMotdePasse.aspx.designer.cs">
-      <DependentUpon>recuperationMotdePasse.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PagesWeb\Participant\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PagesWeb\Participant\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

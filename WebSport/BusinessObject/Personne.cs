@@ -21,27 +21,19 @@ namespace BusinessObject
         }
 
 
-        public static Personne ListePersonne()
+        public static List<Personne> ListePersonne()
         {
-
-
-            IList<Personne> personnes;
-            DAL.DA_Personnes dt = DAL.Personne.DonneToutes();
+            List<Personne> personnes = new List<Personne>();
+            DAL.DA_Personnes.PersonneDataTable dt = DAL.Personne.DonneToutes();
 
             foreach (DataRow oRow in dt)
             {
-                Personne pers = new Personne(dt)
+                Personne pers = new Personne(Convert.ToInt32(oRow["ID"]), oRow["Nom"].ToString(), oRow["Prenom"].ToString());
+
+                personnes.Add(pers);
             }
 
-
-
-            IList<Personne> personnes = .AsEnumerable().Select(row =>
-    new Personne()
-    {
-        id = row.Field<int>("id"),
-        name = row.Field<string>("name")
-    }).ToList();
-
+            return personnes;
         }
 
     }

@@ -212,9 +212,17 @@
     </Content>
     <Content Include="JavaScript\js\bootstrap.js" />
     <Content Include="JavaScript\js\bootstrap.min.js" />
+    <Content Include="PagesWeb\Administration\Courses\AjouterCourse.aspx" />
+    <Content Include="PagesWeb\Administration\Courses\DetailCourse.aspx" />
+    <Content Include="PagesWeb\Administration\Courses\ListeCourses.aspx" />
+    <Content Include="PagesWeb\Administration\Dashbord.aspx" />
+    <Content Include="PagesWeb\Administration\Membres\AjouterMembre.aspx" />
+    <Content Include="PagesWeb\Administration\Membres\DetailMembre.aspx" />
+    <Content Include="PagesWeb\Administration\Membres\ListeMembres.aspx" />
     <Content Include="PagesWeb\Participant\connexion.aspx" />
     <Content Include="PagesWeb\Participant\Inscription.aspx" />
     <Content Include="PagesWeb\Participant\MasterPageParticipant.Master" />
+    <Content Include="PagesWeb\Administration\MasterPageAdmin.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="PagesWeb\Participant\recuperationMotdePasse.aspx" />
     <Content Include="PagesWeb\Participant\WebForm1.aspx" />
@@ -414,6 +422,62 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="PagesWeb\Administration\Courses\AjouterCourse.aspx.cs">
+      <DependentUpon>AjouterCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Courses\AjouterCourse.aspx.designer.cs">
+      <DependentUpon>AjouterCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Courses\DetailCourse.aspx.cs">
+      <DependentUpon>DetailCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Courses\DetailCourse.aspx.designer.cs">
+      <DependentUpon>DetailCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Courses\ListeCourses.aspx.cs">
+      <DependentUpon>ListeCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Courses\ListeCourses.aspx.designer.cs">
+      <DependentUpon>ListeCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Dashbord.aspx.cs">
+      <DependentUpon>Dashbord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Dashbord.aspx.designer.cs">
+      <DependentUpon>Dashbord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\MasterPageAdmin.Master.cs">
+      <DependentUpon>MasterPageAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\MasterPageAdmin.Master.designer.cs">
+      <DependentUpon>MasterPageAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Membres\AjouterMembre.aspx.cs">
+      <DependentUpon>AjouterMembre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Membres\AjouterMembre.aspx.designer.cs">
+      <DependentUpon>AjouterMembre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Membres\DetailMembre.aspx.cs">
+      <DependentUpon>DetailMembre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Membres\DetailMembre.aspx.designer.cs">
+      <DependentUpon>DetailMembre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Membres\ListeMembres.aspx.cs">
+      <DependentUpon>ListeMembres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Administration\Membres\ListeMembres.aspx.designer.cs">
+      <DependentUpon>ListeMembres.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PagesWeb\Participant\connexion.aspx.cs">
       <DependentUpon>connexion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

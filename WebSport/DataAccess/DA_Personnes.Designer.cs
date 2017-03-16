@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace DataAccess {
+namespace DAL {
     
     
     /// <summary>
@@ -20,7 +20,7 @@ namespace DataAccess {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Personnes")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DA_Personnes")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DA_Personnes : global::System.Data.DataSet {
         
@@ -199,9 +199,9 @@ namespace DataAccess {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Personnes";
+            this.DataSetName = "DA_Personnes";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Personnes.xsd";
+            this.Namespace = "http://tempuri.org/DA_Personnes.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablePersonne = new PersonneDataTable();
@@ -804,7 +804,7 @@ namespace DataAccess {
         }
     }
 }
-namespace DataAccess.PersonnesTableAdapters {
+namespace DAL.DA_PersonnesTableAdapters {
     
     
     /// <summary>
@@ -989,7 +989,7 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse FROM Personn
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DataAccess.Properties.Settings.Default.WebSportConnectionString;
+            this._connection.ConnectionString = global::DAL.Properties.Settings.Default.WebSportConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

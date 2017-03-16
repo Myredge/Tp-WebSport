@@ -43,7 +43,6 @@
     <Compile Include="Course.cs" />
     <Compile Include="Inscription.cs" />
     <Compile Include="Personne.cs" />
-    <Compile Include="Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

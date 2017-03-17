@@ -9,9 +9,9 @@ namespace BusinessObject
 {
     public class Personne
     {
-        int ID;
-        string Nom;
-        string Prenom;
+        public int ID { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
 
         public Personne(int nId, string strNom, string strPrenom)
         {
@@ -21,20 +21,7 @@ namespace BusinessObject
         }
 
 
-        public static List<Personne> ListePersonne()
-        {
-            List<Personne> personnes = new List<Personne>();
-            DAL.DA_Personnes.PersonneDataTable dt = DAL.Personne.DonneToutes();
-
-            foreach (DataRow oRow in dt)
-            {
-                Personne pers = new Personne(Convert.ToInt32(oRow["ID"]), oRow["Nom"].ToString(), oRow["Prenom"].ToString());
-
-                personnes.Add(pers);
-            }
-
-            return personnes;
-        }
+      
 
     }
 }

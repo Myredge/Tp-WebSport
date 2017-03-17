@@ -570,6 +570,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObject\BO.csproj">
+      <Project>{44b82009-6765-427f-a52a-b53e17049278}</Project>
+      <Name>BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessService\BLL.csproj">
+      <Project>{ac2b683f-48de-4027-bf2b-2f23dc1e316d}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

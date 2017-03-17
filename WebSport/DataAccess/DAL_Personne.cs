@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Personne
+    public class DAL_Personne
     {
         public static DA_Personnes.PersonneDataTable DonneToutes()
         {
             return new DA_PersonnesTableAdapters.PersonneTableAdapter().DonneToutes();
         }
     }
-
 }

@@ -22,7 +22,7 @@ namespace BusinessService
 
             foreach (DataRow oRow in dt)
             {
-                Personne pers = new Personne(Convert.ToInt32(oRow["ID"]), oRow["Nom"].ToString(), oRow["Prenom"].ToString());
+                Personne pers = new Personne(oRow["Nom"].ToString(), oRow["Prenom"].ToString(), oRow["Email"].ToString(), oRow["MotDePasse"].ToString(), oRow["Sexe"].ToString());
 
                 personnes.Add(pers);
             }
@@ -43,10 +43,10 @@ namespace BusinessService
         /// <param name="Role"></param>
         /// <returns></returns>
         public static Personne personne(string strNom, string strPrenom, string strEmail, string strTel,
-            DateTime dtDateNaiss, string strMotdePasse, bool bActif)
+            DateTime dtDateNaiss, string strMotdePasse, bool bActif, bool bIsAdmin, string strSexe)
         {
             Personne personne = new Personne(strNom, strPrenom, strEmail
-                , strTel, dtDateNaiss, strMotdePasse, bActif);
+                , strTel, dtDateNaiss, strMotdePasse, bActif, bIsAdmin,strSexe);
 
             return personne;
         }
@@ -58,7 +58,7 @@ namespace BusinessService
         public static void addPersonne(Personne pers)
         {
             DAL_Personne.Insert(pers.Nom, pers.Prenom, pers.Email
-                , pers.Tel, pers.DateNaiss, pers.MotDePasse, pers.bActif);
+                , pers.Tel, pers.DateNaiss, pers.MotDePasse, pers.bActif, pers.Sexe, pers.bIsAdmin);
         }
     }
 }

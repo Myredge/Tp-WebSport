@@ -27,7 +27,7 @@ namespace BusinessObject
         /// <param name="nId"></param>
         /// <param name="strNom"></param>
         /// <param name="strPrenom"></param>
-        public Personne(string strNom, string strPrenom, string strEmail, string strMotDePasse, bool bActif = true, bool bIsAdmin = false, string strSexe)
+        public Personne(string strNom, string strPrenom, string strEmail, string strMotDePasse, string strSexe)
         {
             this.Nom = strNom;
             this.Prenom = strPrenom;
@@ -35,10 +35,10 @@ namespace BusinessObject
             this.MotDePasse = strMotDePasse;
             this.bActif = bActif;
             this.Sexe = strSexe;
-            this.bIsAdmin = bIsAdmin;
+            this.bActif = true;
+            this.bIsAdmin = false;
         }
-        // ERREUR ICI ???
-
+  
         /// <summary>
         /// Constructeur lors de création de compte côté admin
         /// </summary>

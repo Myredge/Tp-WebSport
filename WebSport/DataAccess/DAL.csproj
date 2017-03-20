@@ -41,11 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_Course.cs" />
+    <Compile Include="DAL_Participation.cs" />
     <Compile Include="DAL_Personne.cs" />
     <Compile Include="DA_Courses.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DA_Courses.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DA_Participations.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DA_Participations.xsd</DependentUpon>
     </Compile>
     <Compile Include="DA_Personnes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -71,6 +77,17 @@
     </None>
     <None Include="DA_Courses.xss">
       <DependentUpon>DA_Courses.xsd</DependentUpon>
+    </None>
+    <None Include="DA_Participations.xsc">
+      <DependentUpon>DA_Participations.xsd</DependentUpon>
+    </None>
+    <None Include="DA_Participations.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DA_Participations.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DA_Participations.xss">
+      <DependentUpon>DA_Participations.xsd</DependentUpon>
     </None>
     <None Include="DA_Personnes.xsc">
       <DependentUpon>DA_Personnes.xsd</DependentUpon>

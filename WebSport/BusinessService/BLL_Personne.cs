@@ -15,7 +15,7 @@ namespace BusinessService
         /// Returne la liste des personnes
         /// </summary>
         /// <returns></returns>
-        public static List<Personne> ListePersonne()
+        public static List<Personne> ListePersonnes()
         {
             List<Personne> personnes = new List<Personne>();
             DA_Personnes.PersonneDataTable dt = DAL_Personne.DonneToutes();

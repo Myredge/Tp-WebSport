@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Personne.cs" />
+    <Compile Include="Personne_Role.cs" />
+    <Compile Include="Personne_Sexe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

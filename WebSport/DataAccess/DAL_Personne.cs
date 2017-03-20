@@ -12,5 +12,12 @@ namespace DAL
         {
             return new DA_PersonnesTableAdapters.PersonneTableAdapter().DonneToutes();
         }
+
+        public static void Insert(string strNom, string strPrenom, string strEmail, string strTel,
+            DateTime dtDateNaiss, string strMotdePasse, bool bActif)
+        {
+            new DA_PersonnesTableAdapters.PersonneTableAdapter().Insert(strNom, strPrenom, strEmail
+                , strTel, dtDateNaiss, strMotdePasse, bActif, null, null);
+        }
     }
 }

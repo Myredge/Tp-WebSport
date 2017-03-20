@@ -11,6 +11,10 @@ namespace BusinessService
 {
     public class BLL_Personne
     {
+        /// <summary>
+        /// Returne la liste des personnes
+        /// </summary>
+        /// <returns></returns>
         public static List<Personne> ListePersonne()
         {
             List<Personne> personnes = new List<Personne>();
@@ -24,6 +28,37 @@ namespace BusinessService
             }
 
             return personnes;
+        }
+
+        /// <summary>
+        /// Créer un objet de Classe "Personne"
+        /// </summary>
+        /// <param name="strNom"></param>
+        /// <param name="strPrenom"></param>
+        /// <param name="strEmail"></param>
+        /// <param name="strTel"></param>
+        /// <param name="dtDateNaiss"></param>
+        /// <param name="strMotdePasse"></param>
+        /// <param name="bActif"></param>
+        /// <param name="Role"></param>
+        /// <returns></returns>
+        public static Personne personne(string strNom, string strPrenom, string strEmail, string strTel,
+            DateTime dtDateNaiss, string strMotdePasse, bool bActif)
+        {
+            Personne personne = new Personne(strNom, strPrenom, strEmail
+                , strTel, dtDateNaiss, strMotdePasse, bActif);
+
+            return personne;
+        }
+
+        /// <summary>
+        /// Ajoute une nouvelle personne en BDD
+        /// </summary>
+        /// <param name="pers"></param>
+        public static void addPersonne(Personne pers)
+        {
+            DAL_Personne.Insert(pers.Nom, pers.Prenom, pers.Email
+                , pers.Tel, pers.DateNaiss, pers.MotDePasse, pers.bActif);
         }
     }
 }

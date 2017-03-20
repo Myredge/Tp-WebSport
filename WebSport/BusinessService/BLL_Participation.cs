@@ -19,12 +19,12 @@ namespace BusinessService
             foreach (DataRow oRow in dt)
             {
                 //Get Personne pour ID
-                // Get Course pour ID
+                Personne pers = BLL_Personne.getPersonne(Convert.ToInt32(oRow["PersonneId"]));
+                //Get Course pour ID
+                Course course = BLL_Course.getCourse(Convert.ToInt32(oRow["CourseId"]));
 
-                //Participation participation = new Participation(oRow["Titre"].ToString(), oRow["Description"].ToString(),
-                // Convert.ToDateTime(oRow["DateDebut"].ToString()),
-                //    Convert.ToDateTime(oRow["DateFin"].ToString()), oRow["Ville"].ToString()
-                //    );
+                //Participation participation = new Participation(pers, course);
+                    //);
 
                // participations.Add(participation);
             }

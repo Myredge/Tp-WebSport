@@ -60,5 +60,14 @@ namespace BusinessService
             DAL_Personne.Insert(pers.Nom, pers.Prenom, pers.Email
                 , pers.Tel, pers.DateNaiss, pers.MotDePasse, pers.bActif, pers.Sexe, pers.bIsAdmin);
         }
+
+        public static Personne getPersonne(int nIdPersonne)
+        {
+            DataRow oRow = DAL_Personne.DonnePersonnePourId(nIdPersonne)[0];
+
+            Personne pers = new Personne(oRow["Nom"].ToString(), oRow["Prenom"].ToString(), oRow["Email"].ToString(), oRow["MotDePasse"].ToString(), oRow["Sexe"].ToString());
+
+            return pers;
+        }
     }
 }

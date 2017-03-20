@@ -60,6 +60,15 @@ namespace BusinessService
             DAL_Course.Insert(course.Titre, course.Description, course.DateDebut, course.DateFin, course.Ville);
         }
 
+        public static Course getCourse(int nIdCourse)
+        {
+            DataRow oRow = DAL_Course.DonneCoursePourId(nIdCourse)[0];
 
+            Course course = new Course(oRow["Titre"].ToString(), oRow["Description"].ToString(),
+                 Convert.ToDateTime(oRow["DateDebut"].ToString()),
+                    Convert.ToDateTime(oRow["DateFin"].ToString()), oRow["Ville"].ToString());
+
+            return course;
+        }
     }
 }

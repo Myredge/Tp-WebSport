@@ -28,10 +28,10 @@ namespace DAL
         /// <param name="strMotdePasse"></param>
         /// <param name="bActif"></param>
         public static void Insert(string strNom, string strPrenom, string strEmail, string strTel,
-            DateTime dtDateNaiss, string strMotdePasse, bool bActif)
+            DateTime dtDateNaiss, string strMotdePasse, bool bActif, string strSexe, bool bIsAdmin)
         {
             new DA_PersonnesTableAdapters.PersonneTableAdapter().Insert(strNom, strPrenom, strEmail
-                , strTel, dtDateNaiss, strMotdePasse, bActif, null, null);
+                , strTel, dtDateNaiss, strMotdePasse, bActif, strSexe, bIsAdmin);
         }
 
         /// <summary>

@@ -17,20 +17,39 @@ namespace BusinessObject
         public DateTime DateNaiss { get; set; }
         public string MotDePasse { get; set; }
         public bool bActif { get; set; }
-        public Personne_Role role { get; set; }
-       // public Personne_Sexe sexe { get; set; }
+        public string Sexe { get; set; }
+        public bool bIsAdmin { get; set; }
 
 
-
-
-        public Personne(int nId, string strNom, string strPrenom)
+        /// <summary>
+        /// Constructeur lors de création de compte
+        /// </summary>
+        /// <param name="nId"></param>
+        /// <param name="strNom"></param>
+        /// <param name="strPrenom"></param>
+        public Personne(string strNom, string strPrenom, string strEmail, string strMotDePasse, bool bActif = true, bool bIsAdmin = false, string strSexe)
         {
-            this.ID = nId;
             this.Nom = strNom;
             this.Prenom = strPrenom;
+            this.Email = strEmail;
+            this.MotDePasse = strMotDePasse;
+            this.bActif = bActif;
+            this.Sexe = strSexe;
+            this.bIsAdmin = bIsAdmin;
         }
+        // ERREUR ICI ???
 
-        public Personne(string strNom, string strPrenom, string strEmail, string strTel, DateTime dtDateNaiss, string strMotDePasse, bool bActif)
+        /// <summary>
+        /// Constructeur lors de création de compte côté admin
+        /// </summary>
+        /// <param name="strNom"></param>
+        /// <param name="strPrenom"></param>
+        /// <param name="strEmail"></param>
+        /// <param name="strTel"></param>
+        /// <param name="dtDateNaiss"></param>
+        /// <param name="strMotDePasse"></param>
+        /// <param name="bActif"></param>
+        public Personne(string strNom, string strPrenom, string strEmail, string strTel, DateTime dtDateNaiss, string strMotDePasse, bool bActif, bool bIsAdmin, string strSexe)
         {
             this.Nom = strNom;
             this.Prenom = strPrenom;
@@ -39,7 +58,8 @@ namespace BusinessObject
             this.DateNaiss = dtDateNaiss;
             this.MotDePasse = strMotDePasse;
             this.bActif = bActif;
-            //this.role = cRole;
+            this.bIsAdmin = bIsAdmin;
+            this.Sexe = strSexe;
         }
 
 

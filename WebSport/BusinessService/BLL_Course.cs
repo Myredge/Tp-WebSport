@@ -24,8 +24,8 @@ namespace BusinessService
             foreach (DataRow oRow in dt)
             {
                 Course course = new Course(oRow["Titre"].ToString(), oRow["Description"].ToString(),
-                    oRow["Ville"].ToString(), Convert.ToDateTime(oRow["DateDebut"].ToString()),
-                    Convert.ToDateTime(oRow["DateFin"].ToString())
+                 Convert.ToDateTime(oRow["DateDebut"].ToString()),
+                    Convert.ToDateTime(oRow["DateFin"].ToString()), oRow["Ville"].ToString()
                     );
 
                 courses.Add(course);
@@ -57,7 +57,7 @@ namespace BusinessService
         /// <param name="course"></param>
         public static void addCourse(Course course)
         {
-            DAL_Course.Insert(course.Titre,course.Description, course.DateDebut, course.DateFin, course.Ville);
+            DAL_Course.Insert(course.Titre, course.Description, course.DateDebut, course.DateFin, course.Ville);
         }
 
 

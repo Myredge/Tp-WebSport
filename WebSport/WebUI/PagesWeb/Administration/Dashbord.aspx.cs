@@ -12,7 +12,7 @@ namespace WebUI.PagesWeb.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LBL_TEST.Text = BLL_Personne.ListePersonnes()[0].Nom.ToString();
+            //LBL_TEST.Text = BLL_Personne.ListePersonnes()[0].Nom.ToString();
         }
     }
 }

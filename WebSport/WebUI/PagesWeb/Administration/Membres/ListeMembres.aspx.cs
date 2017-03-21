@@ -15,10 +15,26 @@ namespace WebUI.PagesWeb.Administration.Membres
         {
 
             // LES TESTS SONT OK !!!!
+           
+                this.BindGrid();
+            
 
-            //GV_LISTE_MEMBRE.DataSource = BLL_Personne.ListePersonnes();
-            //GV_LISTE_MEMBRE.DataBind();
+        }
 
+        private void BindGrid()
+        {
+
+
+            GV_LISTE_MEMBRE.DataSource = BLL_Personne.ListePersonnes();
+            GV_LISTE_MEMBRE.DataBind();
+       
+            
+        }
+
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GV_LISTE_MEMBRE.PageIndex = e.NewPageIndex;
+            this.BindGrid();
         }
     }
 }

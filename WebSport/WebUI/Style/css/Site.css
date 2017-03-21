@@ -1,38 +1,120 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.ws_wrapper {
+    width: 100%;
+    min-width: 768px !important;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: #004a99;
+    height: 42px;
+    min-width: 768px;
+    z-index: 500;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.ws-main-menu {
+    background-color: #fff;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    width: 268px;
+    padding: 42px 0;
+    z-index: 400;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+    -webkit-transition: all 250ms 250ms cubic-bezier(.1618,.2618,0,1);
+    -moz-transition: all 250ms 250ms cubic-bezier(.1618,.2618,0,1);
+    -o-transition: all 250ms 250ms cubic-bezier(.1618,.2618,0,1);
+    transition: all 250ms 250ms cubic-bezier(.1618,.2618,0,1);
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="select"] {
-    max-width: 280px;
+#container {
+    padding-left: 268px;
+    min-width: 768px !important;
+    padding-top: 42px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 250ms 250ms cubic-bezier(.1618,.2618,0,1);
+    -moz-transition: all 250ms 250ms cubic-bezier(.1618,.2618,0,1);
+    -o-transition: all 250ms 250ms cubic-bezier(.1618,.2618,0,1);
+    transition: all 250ms 250ms cubic-bezier(.1618,.2618,0,1);
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .jumbotron {
-        margin-top: 20px;
-    }
-    .body-content {
-        padding: 0;
-    }
+.ws-wsp-container {
+    position: relative;
+    background-color: #edecec;
+    height: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ws-wsp-header {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 300;
+    position: relative;
+    height: 62px;
+    padding: 16px 32px;
+    width: 100%;
+}
+
+.ws-title {
+    line-height: 30px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+    color: #777;
+}
+
+.ws-wsp-body {
+    padding-bottom: 61px;
+    box-sizing: border-box;
+    /*position: absolute;*/
+    height: 100%;
+    width: 100%;
+    padding: 16px 32px;
+    top: 0;
+    z-index: 100;
+}
+
+.ws-body {
+    height: 100%;
+    position: relative;
+}
+
+.ws-wsp-footer {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    height: 62px;
+    padding: 16px 32px;
+    width: 100%;
+    z-index: 200;
+}
+
+.ws-list-message {
+    height: 100%;
+}
+
+.ws-scroll-container {
+    height: 100%;
+
+}
+
+.ws-card {
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+    background-color: #fff;
+    border-radius: 2px;
 }

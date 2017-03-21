@@ -13,15 +13,6 @@ namespace WebUI.PagesWeb.Administration.Membres {
     public partial class ListeMembres {
         
         /// <summary>
-        /// Contrôle LBL_TITRE.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_TITRE;
-        
-        /// <summary>
         /// Contrôle GV_LISTE_MEMBRE.
         /// </summary>
         /// <remarks>

@@ -12,18 +12,73 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <form id="form1" runat="server">
+        <div class="ws_wrapper"></div>
+        <div id="header" class="header">
+        </div>
+        <div id="menuContainer" class="ws-main-menu navbar-static-side teasing al-extend">
+            <div class="sidebar-collapse">
+                <ul id="menu" class="nav al-first-level">
+                    <li>
+                        <a id="ctl00_Accueil" title="Tableau de bord" href="Accueil.aspx">
+                            <i class="fa fa-pie-chart fa-fw" alt="Tableau de bord"></i>Tableau de bord</a>
+                    </li>
+                    <li>
+                        <a id="ctl00_nouvelleDemande" title="Nouvelle Demande" href="AjoutMessage.aspx">
+                            <i class="fa fa-plus fa-fw" alt="Nouvelle demande"></i>Nouvelle demande</a>
 
-    <div id="header" class="nav">
-    </div>
-    <div id="menu">
-    </div>
-    <div id="container">
-        <form id="form1" runat="server">
-            <div>
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
+                    </li>
+                    <li class="">
+                        <a href="#" class="al-ripple">
+                            <i class="fa fa-table fa-fw" alt="Mes raccourcis"></i>
+
+                            <span id="ctl00_mesRaccourcis">Mes raccourcis</span>
+
+
+
+                        </a>
+                        <ul class="nav nav-second-level al-second-level ">
+                            <li>
+                                <a id="ctl00_linkMessageEnCours" class="menuItem al-ripple al-ellipsis" href="javascript:__doPostBack('ctl00$linkMessageEnCours','')">Demandes en cours</a>
+                            </li>
+                            <li class="">
+                                <a id="ctl00_linkRacAttentes" class="menuItem al-ripple al-ellipsis" href="javascript:__doPostBack('ctl00$linkRacAttentes','')">Demandes en attente</a>
+
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a id="ctl00_RechercheAvancée" title="Recherche avancée" href="javascript:__doPostBack('ctl00$RechercheAvancée','')">
+                            <i class="fa fa-search fa-fw" alt="Recherche avancée"></i>Recherche avancée</a>
+
+
+                    </li>
+                    <li>
+                        <a id="ctl00_environnements" title="Mes environnements" href="Sites.aspx">
+                            <i class="fa fa-wrench fa-fw" alt="Mes environnements"></i>Mes environnements</a>
+                    </li>
+
+                    <li>
+
+                        <a id="ctl00_LinkButton1" title="Documentations" href="Documentation.aspx">
+                            <i class="fa fa-book fa-fw" alt="Documentations"></i>Documentations</a>
+                    </li>
+                </ul>
+                <div class="al-footer">
+                    <div>
+                    </div>
+
+                </div>
             </div>
-        </form>
-    </div>
+        </div>
+
+        <div id="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    </form>
 </body>
 </html>

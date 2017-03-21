@@ -487,7 +487,7 @@
     <Content Include="Administration\Courses\AjouterCourse.aspx" />
     <Content Include="Administration\Courses\DetailCourse.aspx" />
     <Content Include="Administration\Courses\ListeCourses.aspx" />
-    <Content Include="Administration\Dashbord.aspx" />
+    <Content Include="Administration\Dashboard.aspx" />
     <Content Include="Administration\Membres\AjouterMembre.aspx" />
     <Content Include="Administration\Membres\DetailMembre.aspx" />
     <Content Include="Administration\Membres\ListeMembres.aspx" />
@@ -750,12 +750,12 @@
     <Compile Include="Administration\Courses\ListeCourses.aspx.designer.cs">
       <DependentUpon>ListeCourses.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administration\Dashbord.aspx.cs">
-      <DependentUpon>Dashbord.aspx</DependentUpon>
+    <Compile Include="Administration\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administration\Dashbord.aspx.designer.cs">
-      <DependentUpon>Dashbord.aspx</DependentUpon>
+    <Compile Include="Administration\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\MasterPageAdmin.Master.cs">
       <DependentUpon>MasterPageAdmin.Master</DependentUpon>

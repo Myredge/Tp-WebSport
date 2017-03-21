@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administration/MasterPageAdmin.Master" AutoEventWireup="true" CodeBehind="ListeMembres.aspx.cs" Inherits="WebUI.PagesWeb.Administration.Membres.ListeMembres" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administration/MasterPageAdmin.Master" AutoEventWireup="true" CodeBehind="ListeMembres.aspx.cs" Inherits="WebUI.Administration.Membres.ListeMembres" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title> Liste des membres</title>
@@ -40,10 +40,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
     </div>
 
 

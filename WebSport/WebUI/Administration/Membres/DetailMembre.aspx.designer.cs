@@ -7,7 +7,7 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace WebUI.PagesWeb.Administration.Membres {
+namespace WebUI.Administration.Membres {
     
     
     public partial class DetailMembre {

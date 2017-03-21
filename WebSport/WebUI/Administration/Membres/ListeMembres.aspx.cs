@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using BusinessService;
 using BusinessObject;
 
-namespace WebUI.PagesWeb.Administration.Membres
+namespace WebUI.Administration.Membres
 {
     public partial class ListeMembres : System.Web.UI.Page
     {

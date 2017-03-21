@@ -6,7 +6,7 @@
 .header {
     position: fixed;
     width: 100%;
-    background-color: #004a99;
+    background-color: #E64A19;
     height: 42px;
     min-width: 768px;
     z-index: 500;
@@ -123,9 +123,7 @@
 }
 
 .nav {
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
+   
 }
 
 .ws-first-level {

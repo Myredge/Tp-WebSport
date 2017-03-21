@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebUI.PagesWeb.Administration
+namespace WebUI.Administration
 {
     public partial class Dashbord : System.Web.UI.Page
     {

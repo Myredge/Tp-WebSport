@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PagesWeb/Administration/MasterPageAdmin.Master" AutoEventWireup="true" CodeBehind="Dashbord.aspx.cs" Inherits="WebUI.PagesWeb.Administration.Dashbord" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administration/MasterPageAdmin.Master" AutoEventWireup="true" CodeBehind="Dashbord.aspx.cs" Inherits="WebUI.PagesWeb.Administration.Dashbord" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../../Scripts/amcharts/amcharts.js"></script>

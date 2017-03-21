@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageAdmin.master.cs" Inherits="WebUI.Administration.MasterPageAdmin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../../Style/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Style/css/Site.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="ws_wrapper"></div>
+        <div id="header" class="header">
+        </div>
+        <div id="menuContainer" class="ws-main-menu">
+            <div class="sidebar-collapse">
+                <ul id="menu" class="nav ws-first-level">
+                    <li>
+                        <a href="../Dashbord.aspx">Tableau de bord</a>
+                    </li>
+                    <li>
+                        <a href="Membres/ListeMembres.aspx">Liste des membres</a>
+                    </li>
+
+
+
+                </ul>
+                <div class="al-footer">
+                    <div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    </form>
+</body>
+</html>

@@ -7,7 +7,7 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace WebUI.PagesWeb.Administration {
+namespace WebUI.Administration {
     
     
     public partial class MasterPageAdmin {

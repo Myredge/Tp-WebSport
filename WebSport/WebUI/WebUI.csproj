@@ -484,13 +484,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="PagesWeb\Administration\Courses\AjouterCourse.aspx" />
-    <Content Include="PagesWeb\Administration\Courses\DetailCourse.aspx" />
-    <Content Include="PagesWeb\Administration\Courses\ListeCourses.aspx" />
-    <Content Include="PagesWeb\Administration\Dashbord.aspx" />
-    <Content Include="PagesWeb\Administration\Membres\AjouterMembre.aspx" />
-    <Content Include="PagesWeb\Administration\Membres\DetailMembre.aspx" />
-    <Content Include="PagesWeb\Administration\Membres\ListeMembres.aspx" />
+    <Content Include="Administration\Courses\AjouterCourse.aspx" />
+    <Content Include="Administration\Courses\DetailCourse.aspx" />
+    <Content Include="Administration\Courses\ListeCourses.aspx" />
+    <Content Include="Administration\Dashbord.aspx" />
+    <Content Include="Administration\Membres\AjouterMembre.aspx" />
+    <Content Include="Administration\Membres\DetailMembre.aspx" />
+    <Content Include="Administration\Membres\ListeMembres.aspx" />
     <Content Include="PagesWeb\Connexion.aspx" />
     <Content Include="PagesWeb\Inscription.aspx" />
     <Content Include="PagesWeb\MotDePasseOublie.aspx" />
@@ -500,7 +500,7 @@
     <Content Include="PagesWeb\Participant\Courses\ListeCoursesDisponible.aspx" />
     <Content Include="PagesWeb\Participant\Courses\ListeCoursesTerminees.aspx" />
     <Content Include="PagesWeb\Participant\MasterPageParticipant.Master" />
-    <Content Include="PagesWeb\Administration\MasterPageAdmin.Master" />
+    <Content Include="Administration\MasterPageAdmin.Master" />
     <Content Include="Scripts\amcharts\plugins\animate\bower.json" />
     <Content Include="Scripts\amcharts\plugins\animate\LICENSE" />
     <Content Include="Scripts\amcharts\plugins\animate\package.json" />
@@ -729,60 +729,60 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="PagesWeb\Administration\Courses\AjouterCourse.aspx.cs">
+    <Compile Include="Administration\Courses\AjouterCourse.aspx.cs">
       <DependentUpon>AjouterCourse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Courses\AjouterCourse.aspx.designer.cs">
+    <Compile Include="Administration\Courses\AjouterCourse.aspx.designer.cs">
       <DependentUpon>AjouterCourse.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Courses\DetailCourse.aspx.cs">
+    <Compile Include="Administration\Courses\DetailCourse.aspx.cs">
       <DependentUpon>DetailCourse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Courses\DetailCourse.aspx.designer.cs">
+    <Compile Include="Administration\Courses\DetailCourse.aspx.designer.cs">
       <DependentUpon>DetailCourse.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Courses\ListeCourses.aspx.cs">
+    <Compile Include="Administration\Courses\ListeCourses.aspx.cs">
       <DependentUpon>ListeCourses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Courses\ListeCourses.aspx.designer.cs">
+    <Compile Include="Administration\Courses\ListeCourses.aspx.designer.cs">
       <DependentUpon>ListeCourses.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Dashbord.aspx.cs">
+    <Compile Include="Administration\Dashbord.aspx.cs">
       <DependentUpon>Dashbord.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Dashbord.aspx.designer.cs">
+    <Compile Include="Administration\Dashbord.aspx.designer.cs">
       <DependentUpon>Dashbord.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Administration\MasterPageAdmin.Master.cs">
+    <Compile Include="Administration\MasterPageAdmin.Master.cs">
       <DependentUpon>MasterPageAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Administration\MasterPageAdmin.Master.designer.cs">
+    <Compile Include="Administration\MasterPageAdmin.Master.designer.cs">
       <DependentUpon>MasterPageAdmin.Master</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Membres\AjouterMembre.aspx.cs">
+    <Compile Include="Administration\Membres\AjouterMembre.aspx.cs">
       <DependentUpon>AjouterMembre.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Membres\AjouterMembre.aspx.designer.cs">
+    <Compile Include="Administration\Membres\AjouterMembre.aspx.designer.cs">
       <DependentUpon>AjouterMembre.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Membres\DetailMembre.aspx.cs">
+    <Compile Include="Administration\Membres\DetailMembre.aspx.cs">
       <DependentUpon>DetailMembre.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Membres\DetailMembre.aspx.designer.cs">
+    <Compile Include="Administration\Membres\DetailMembre.aspx.designer.cs">
       <DependentUpon>DetailMembre.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Membres\ListeMembres.aspx.cs">
+    <Compile Include="Administration\Membres\ListeMembres.aspx.cs">
       <DependentUpon>ListeMembres.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PagesWeb\Administration\Membres\ListeMembres.aspx.designer.cs">
+    <Compile Include="Administration\Membres\ListeMembres.aspx.designer.cs">
       <DependentUpon>ListeMembres.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesWeb\Connexion.aspx.cs">

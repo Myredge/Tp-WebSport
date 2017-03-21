@@ -17,13 +17,13 @@
         <div id="header" class="header">
             <div class="row">
                 <div class="col-md-4">
-                    <label style="color:white; font-size:24px; padding-left:10px;"> WebSport </label>
+                    <label style="color: white; font-size: 24px; padding-left: 10px;">WebSport </label>
                 </div>
                 <div class="col-md-6"></div>
                 <div class="col-md-2">
-                     <label style="color:white; font-size:16px; padding-left:10px;"> Bienvenue xxx </label>
+                    <label style="color: white; font-size: 16px; padding-left: 10px;">Bienvenue xxx </label>
                 </div>
-              
+
             </div>
         </div>
         <div id="menuContainer" class="ws-main-menu">
@@ -33,11 +33,17 @@
                         <a href="#">Tableau de bord</a>
                     </li>
                     <li>
-                        <a href="#">Liste des membres</a>
+                        <a href="#">Gestion des membres</a>
+                    </li>
+                    <li>
+                        <a href="#">Gestion des courses</a>
                     </li>
                 </ul>
                 <div class="al-footer">
-                    <div>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-6">
+                            <label>WebSport v1.0.0</label>
+                        </div>
                     </div>
 
                 </div>

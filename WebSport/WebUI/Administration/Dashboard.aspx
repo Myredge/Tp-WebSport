@@ -37,7 +37,7 @@
             }
         );
     </script>
-    <!--Chart Div Deux  -->
+    <!-- Chart Div Deux -->
     <script type="text/javascript">
         AmCharts.makeChart("chartdivdeux",
             {
@@ -70,7 +70,7 @@
             }
         );
     </script>
-    <!-- colonne -->
+    <!-- Colonne -->
     <script type="text/javascript">
         AmCharts.makeChart("chartdivcol",
 				{

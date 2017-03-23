@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
        <link href="../Style/css/bootstrap.min.css" rel="stylesheet" />
-
+    <link href="../Style/css/signin.css" rel="stylesheet" />
     <link href="../Style/css/Site.css" rel="stylesheet" />
   
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -23,10 +23,10 @@
           <div class="col-md-12 col-xs-12">
                                 <div class="row">
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:Label runat="server" ID="LBL_EMAIL"  Text="Email:"></asp:Label>
+                                        <asp:Label runat="server" ID="LBL_EMAIL"   Text="Email:"></asp:Label>
                                     </div>
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:TextBox runat="server" CssClass="form-group" ID="TB_EMAIL_VALUE"></asp:TextBox>
+                                        <asp:TextBox runat="server" CssClass="form-group" placeholder="someone@email.com" ID="TB_EMAIL_VALUE"></asp:TextBox>
                                         
                                     </div>
                                 </div>
@@ -36,10 +36,10 @@
                                         <asp:Label runat="server" ID="LBL_PASSWORD" Text="Password:"></asp:Label>
                                     </div>
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:TextBox runat="server" CssClass="form-group" ID="TB_PASSWORD_VALUE"></asp:TextBox>
+                                        <asp:TextBox runat="server" type="password" CssClass="form-group" ID="TB_PASSWORD_VALUE"></asp:TextBox>
                                     </div>
                                 </div>
-
+              <a href="">creer compte</a>
 
                <div class="row">
                           <div class="col-md-2 offset-md-10 col-xs-2 offset--xs-5">

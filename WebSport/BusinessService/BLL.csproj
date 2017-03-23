@@ -43,12 +43,17 @@
     <Compile Include="BLL_Course.cs" />
     <Compile Include="BLL_Participation.cs" />
     <Compile Include="BLL_Personne.cs" />
+    <Compile Include="BLL_Statistique.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessObject\BO.csproj">
       <Project>{44b82009-6765-427f-a52a-b53e17049278}</Project>
       <Name>BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{f32fb745-7622-46ca-9eba-219e80fbc247}</Project>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccess\DAL.csproj">
       <Project>{34faa23d-18af-435e-99fe-ab91b99e55c3}</Project>

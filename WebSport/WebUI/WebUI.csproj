@@ -76,6 +76,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -118,10 +122,6 @@
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <Private>True</Private>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
       <Private>True</Private>
@@ -493,8 +493,6 @@
     <Content Include="Administration\Membres\ListeMembres.aspx" />
     <Content Include="PagesWeb\Connexion.aspx" />
     <Content Include="PagesWeb\Inscription.aspx" />
-    <Content Include="PagesWeb\MotDePasseOublie.aspx" />
-    <Content Include="PagesWeb\Participant\Classement\Classement.aspx" />
     <Content Include="PagesWeb\Participant\Courses\DetailCourseDisponible.aspx" />
     <Content Include="PagesWeb\Participant\Courses\DetailCourseTerminee.aspx" />
     <Content Include="PagesWeb\Participant\Courses\ListeCoursesDisponible.aspx" />
@@ -799,20 +797,6 @@
     <Compile Include="PagesWeb\Inscription.aspx.designer.cs">
       <DependentUpon>Inscription.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\MotDePasseOublie.aspx.cs">
-      <DependentUpon>MotDePasseOublie.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PagesWeb\MotDePasseOublie.aspx.designer.cs">
-      <DependentUpon>MotDePasseOublie.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PagesWeb\Participant\Classement\Classement.aspx.cs">
-      <DependentUpon>Classement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PagesWeb\Participant\Classement\Classement.aspx.designer.cs">
-      <DependentUpon>Classement.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PagesWeb\Participant\Courses\DetailCourseDisponible.aspx.cs">
       <DependentUpon>DetailCourseDisponible.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -890,6 +874,10 @@
     <ProjectReference Include="..\BusinessService\BLL.csproj">
       <Project>{ac2b683f-48de-4027-bf2b-2f23dc1e316d}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{f32fb745-7622-46ca-9eba-219e80fbc247}</Project>
+      <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

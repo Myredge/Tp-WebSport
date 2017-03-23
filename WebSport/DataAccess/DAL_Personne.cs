@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,11 @@ namespace DAL
         public static DA_Personnes.PersonneDataTable DonnePersonnePourId(int nIdPersonne)
         {
             return new DA_PersonnesTableAdapters.PersonneTableAdapter().DonnePersonnePourID(nIdPersonne);
+        }
+
+        public static DataTable DonneNombrePersonneParSexe()
+        {
+            return new DA_PersonnesTableAdapters.PersonneTableAdapter().DonneNombrePersonneParSexe();
         }
     }
 }

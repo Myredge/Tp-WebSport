@@ -6,34 +6,29 @@
     <script src="../../Scripts/amcharts/serial.js"></script>
 
     <script type="text/javascript">
+        var str = <%DonneStatsMembre();%>;
+        var dataProvider = JSON.parse(str);
+
         AmCharts.makeChart("chartdiv",
             {
                 "type": "pie",
-                "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+                //"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
                 "titleField": "category",
-                "valueField": "column-1",
+                "valueField": "value",
                 "allLabels": [],
                 "balloon": {},
                 "legend": {
-                    "enabled": true,
+                    "enabled": false,
                     "align": "center",
                     "markerType": "circle"
                 },
-                "titles": [],
-                "dataProvider": [
-                    {
-                        "category": "category 1",
-                        "column-1": 8
-                    },
-                    {
-                        "category": "category 2",
-                        "column-1": 6
-                    },
-                    {
-                        "category": "category 3",
-                        "column-1": 2
-                    }
-                ]
+                "titles": [
+    {
+        "id": "nbMembreSexe",
+        "text": "Nombre de membres"
+    }
+                ],
+                "dataProvider": dataProvider
             }
         );
     </script>
@@ -52,7 +47,6 @@
                     "align": "center",
                     "markerType": "circle"
                 },
-                "titles": [],
                 "dataProvider": [
                     {
                         "category": "category 1",
@@ -164,21 +158,11 @@
                     <div class="col-md-6 col-xs-6">
                         <div class="row">
                             <div class="col-md-12 col-xs-12">
-                                <h4>test</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
                                 <div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                                <h4>test</h4>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-md-12 col-xs-12">
                                 <div id="chartdivdeux" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>

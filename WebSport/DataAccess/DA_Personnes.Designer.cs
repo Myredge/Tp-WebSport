@@ -534,9 +534,7 @@ namespace DAL {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnNom.AllowDBNull = false;
                 this.columnNom.MaxLength = 100;
-                this.columnPrenom.AllowDBNull = false;
                 this.columnPrenom.MaxLength = 100;
                 this.columnEmail.MaxLength = 500;
                 this.columnTelephone.MaxLength = 10;
@@ -697,7 +695,12 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Nom {
                 get {
-                    return ((string)(this[this.tablePersonne.NomColumn]));
+                    try {
+                        return ((string)(this[this.tablePersonne.NomColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'Personne\' est DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePersonne.NomColumn] = value;
@@ -708,7 +711,12 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Prenom {
                 get {
-                    return ((string)(this[this.tablePersonne.PrenomColumn]));
+                    try {
+                        return ((string)(this[this.tablePersonne.PrenomColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Prenom\' dans la table \'Personne\' est DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePersonne.PrenomColumn] = value;
@@ -825,6 +833,30 @@ namespace DAL {
                 set {
                     this[this.tablePersonne.bIsAdminColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNomNull() {
+                return this.IsNull(this.tablePersonne.NomColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNomNull() {
+                this[this.tablePersonne.NomColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrenomNull() {
+                return this.IsNull(this.tablePersonne.PrenomColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrenomNull() {
+                this[this.tablePersonne.PrenomColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1153,7 +1185,7 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM " +
@@ -1161,15 +1193,19 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActi" +
-                "f, Sexe, bIsAdmin\r\nFROM            Personne\r\nWHERE        (Id = @Id)";
+            this._commandCollection[1].CommandText = "select count (*) as nb , Sexe\r\nfrom Personne\r\ngroup by Sexe";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif, Sexe" +
-                ", bIsAdmin FROM Personne";
+            this._commandCollection[2].CommandText = "SELECT        Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActi" +
+                "f, Sexe, bIsAdmin\r\nFROM            Personne\r\nWHERE        (Id = @Id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif, Sexe" +
+                ", bIsAdmin FROM Personne";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1200,8 +1236,19 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DA_Personnes.PersonneDataTable DonnePersonnePourID(int Id) {
+        public virtual DA_Personnes.PersonneDataTable DonneNombrePersonneParSexe() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            DA_Personnes.PersonneDataTable dataTable = new DA_Personnes.PersonneDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DA_Personnes.PersonneDataTable DonnePersonnePourID(int Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
             DA_Personnes.PersonneDataTable dataTable = new DA_Personnes.PersonneDataTable();
             this.Adapter.Fill(dataTable);
@@ -1213,7 +1260,7 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DA_Personnes.PersonneDataTable DonneToutes() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             DA_Personnes.PersonneDataTable dataTable = new DA_Personnes.PersonneDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1255,13 +1302,13 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         public virtual int Delete(int Original_Id, string Original_Nom, string Original_Prenom, string Original_Email, string Original_Telephone, global::System.Nullable<global::System.DateTime> Original_DateNaissance, string Original_MotDePasse, global::System.Nullable<bool> Original_bActif) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Nom == null)) {
-                throw new global::System.ArgumentNullException("Original_Nom");
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nom));
             }
             if ((Original_Prenom == null)) {
-                throw new global::System.ArgumentNullException("Original_Prenom");
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Prenom));
@@ -1328,13 +1375,13 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(string Nom, string Prenom, string Email, string Telephone, global::System.Nullable<global::System.DateTime> DateNaissance, string MotDePasse, global::System.Nullable<bool> bActif, string Sexe, global::System.Nullable<bool> bIsAdmin) {
             if ((Nom == null)) {
-                throw new global::System.ArgumentNullException("Nom");
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nom));
             }
             if ((Prenom == null)) {
-                throw new global::System.ArgumentNullException("Prenom");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Prenom));
@@ -1419,13 +1466,13 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
                     global::System.Nullable<bool> Original_bActif, 
                     int Id) {
             if ((Nom == null)) {
-                throw new global::System.ArgumentNullException("Nom");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nom));
             }
             if ((Prenom == null)) {
-                throw new global::System.ArgumentNullException("Prenom");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Prenom));
@@ -1462,13 +1509,13 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
             }
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id));
             if ((Original_Nom == null)) {
-                throw new global::System.ArgumentNullException("Original_Nom");
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Nom));
             }
             if ((Original_Prenom == null)) {
-                throw new global::System.ArgumentNullException("Original_Prenom");
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Prenom));

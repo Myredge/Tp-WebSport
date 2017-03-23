@@ -199,6 +199,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="PagesWeb\Inscription.aspx" />
     <Content Include="PagesWeb\Participant\Dashboard.aspx" />
     <Content Include="Scripts\amcharts\amcharts.js" />
     <Content Include="Scripts\amcharts\funnel.js" />
@@ -492,7 +493,6 @@
     <Content Include="Administration\Membres\DetailMembre.aspx" />
     <Content Include="Administration\Membres\ListeMembres.aspx" />
     <Content Include="PagesWeb\Connexion.aspx" />
-    <Content Include="PagesWeb\Inscription.aspx" />
     <Content Include="PagesWeb\Participant\Courses\DetailCourseDisponible.aspx" />
     <Content Include="PagesWeb\Participant\Courses\DetailCourseTerminee.aspx" />
     <Content Include="PagesWeb\Participant\Courses\ListeCoursesDisponible.aspx" />

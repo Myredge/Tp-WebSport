@@ -18,8 +18,8 @@ namespace BusinessService
             DataTable dt = DAL_Personne.DonneNombrePersonneParSexe();
 
             DataTable TableStats = new DataTable();
-            TableStats.Columns.Add("category");
-            TableStats.Columns.Add("value");
+            TableStats.Columns.Add("category", typeof(string));
+            TableStats.Columns.Add("value", typeof(Int32));
 
             foreach (DataRow oRow in dt.Rows)
             {
@@ -28,7 +28,10 @@ namespace BusinessService
                 TableStats.Rows.Add(o);
             }
 
-            string Json = Common.Utilitaire.ConvertToJson(TableStats);
+            int count = TableStats.Rows.Count;
+
+            string Json = Common.Utilitaire.DataTableToJsonWithJsonNet(TableStats);
+          
 
             return Json;
         }

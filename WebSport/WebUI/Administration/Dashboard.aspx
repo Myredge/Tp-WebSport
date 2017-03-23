@@ -4,37 +4,42 @@
     <script src="../../Scripts/amcharts/amcharts.js"></script>
     <script src="../../Scripts/amcharts/pie.js"></script>
     <script src="../../Scripts/amcharts/serial.js"></script>
+    <script src="../Scripts/amcharts/themes/light.js"></script>
 
     <script type="text/javascript">
-        var str = <%DonneStatsMembre();%>;
-        var json = JSON.stringify(eval("(" + str + ")"));
-        var dataProvider = JSON.parse(json);
-
         AmCharts.makeChart("chartdiv",
-            {
-                "type": "pie",
-                //"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-                "titleField": "category",
-                "valueField": "value",
-                "allLabels": [],
-                "balloon": {},
-                "legend": {
-                    "enabled": false,
-                    "align": "center",
-                    "markerType": "circle"
-                },
-                "titles": [
-    {
-        "id": "nbMembreSexe",
-        "text": "Nombre de membres"
-    }
-                ],
-                "dataProvider": dataProvider
-            }
-        );
+             {
+                 "type": "pie",
+                 "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+                 "titleField": "category",
+                 "valueField": "column-1",
+                 "allLabels": [],
+                 "balloon": {},
+                 "legend": {
+                     "enabled": true,
+                     "align": "center",
+                     "markerType": "circle"
+                 },
+                 "dataProvider": [
+                     {
+                         "category": "category 1",
+                         "column-1": 8
+                     },
+                     {
+                         "category": "category 2",
+                         "column-1": 6
+                     },
+                     {
+                         "category": "category 3",
+                         "column-1": 2
+                     }
+                 ]
+             }
+         );
     </script>
     <!-- Chart Div Deux -->
     <script type="text/javascript">
+
         AmCharts.makeChart("chartdivdeux",
             {
                 "type": "pie",

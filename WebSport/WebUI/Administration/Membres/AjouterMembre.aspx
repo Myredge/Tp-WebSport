@@ -64,7 +64,7 @@
                                         <asp:Label runat="server" ID="LBL_DATE_NAISS" Text="Date de naissance:"></asp:Label>
                                     </div>
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:TextBox runat="server" CssClass="form-group" ID="TB_DATE_NAISS_VALUE"></asp:TextBox>
+                                        <asp:TextBox runat="server" type="date" CssClass="form-group" ID="TB_DATE_NAISS_VALUE"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -82,10 +82,10 @@
                                 </div>
                                      <div class="row">
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:Label runat="server" ID="LBL_MOT_DE_PASSE" Text="Date de naissance:"></asp:Label>
+                                        <asp:Label runat="server" ID="LBL_MOT_DE_PASSE" Text="Mot de Passe:"></asp:Label>
                                     </div>
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:TextBox runat="server" CssClass="form-group" ID="TB_MOT_DE_PASSE_VALUE"></asp:TextBox>
+                                        <asp:TextBox runat="server"  CssClass="form-group" ID="TB_MOT_DE_PASSE_VALUE"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="row">

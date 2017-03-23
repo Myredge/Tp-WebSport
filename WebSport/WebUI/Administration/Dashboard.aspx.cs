@@ -14,23 +14,17 @@ namespace WebUI.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //LBL_TEST.Text = BLL_Personne.ListePersonnes()[0].Nom.ToString();
 
-          
-
-
-
-
+         //   string json = BLL_Statistique.NombrePersonneParSexe();
 
         }
 
-        protected string DonneStatsMembre()
+        public string DonneStatsMembre()
         {
 
+            string json = BLL_Statistique.NombrePersonneParSexe();
 
-           // string json = BLL_Statistique.NombrePersonneParSexe();
-
-            return "toto";
+            return json;
         }
     }
 }

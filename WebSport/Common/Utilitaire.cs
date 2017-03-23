@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using BusinessObject;
 using System.Data;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Common
 {
     public class Utilitaire
     {
-
-         public static string ConvertToJson(DataTable dt)
+        public static string DataTableToJsonWithJsonNet(DataTable table)
         {
-            string JSONresult;
-            JSONresult = JsonConvert.SerializeObject(dt);
-
-            return JSONresult.ToString();
+            string jsonString = string.Empty;
+            jsonString = JsonConvert.SerializeObject(table);
+            return jsonString;
         }
     }
 }

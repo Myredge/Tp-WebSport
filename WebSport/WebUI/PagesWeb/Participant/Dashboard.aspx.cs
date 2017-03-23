@@ -14,9 +14,7 @@ namespace WebUI.PagesWeb.Participant
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Personne personne = (Personne)Session["ID"];
-
-            int test = personne.ID;
+           
 
         }
     }

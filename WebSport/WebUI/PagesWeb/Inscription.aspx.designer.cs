@@ -128,5 +128,14 @@ namespace WebUI.PagesWeb {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TB_MOT_DE_PASSE_VALUE;
+        
+        /// <summary>
+        /// Contrôle BTN_VALIDER.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTN_VALIDER;
     }
 }

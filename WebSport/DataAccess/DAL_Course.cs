@@ -21,7 +21,7 @@ namespace DAL
         /// <summary>
         /// Récupère la liste de toute les courses en cours 
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns> 
         public static DA_Courses.CourseDataTable DonneCoursesEnCours()
         {
             return new DA_CoursesTableAdapters.CourseTableAdapter().DonneCoursesEnCours();

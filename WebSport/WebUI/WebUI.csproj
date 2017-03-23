@@ -200,7 +200,6 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="PagesWeb\Connexion.aspx" />
-    <Content Include="PagesWeb\Connexion2.aspx" />
     <Content Include="PagesWeb\Participant\Dashboard.aspx" />
     <Content Include="Scripts\amcharts\amcharts.js" />
     <Content Include="Scripts\amcharts\funnel.js" />
@@ -488,15 +487,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Administration\Courses\AjouterCourse.aspx" />
-    <Content Include="Administration\Courses\DetailCourse.aspx" />
     <Content Include="Administration\Courses\ListeCourses.aspx" />
     <Content Include="Administration\Dashboard.aspx" />
     <Content Include="Administration\Membres\AjouterMembre.aspx" />
-    <Content Include="Administration\Membres\DetailMembre.aspx" />
     <Content Include="Administration\Membres\ListeMembres.aspx" />
     <Content Include="PagesWeb\Inscription.aspx" />
     <Content Include="PagesWeb\Participant\Courses\DetailCourseDisponible.aspx" />
-    <Content Include="PagesWeb\Participant\Courses\DetailCourseTerminee.aspx" />
     <Content Include="PagesWeb\Participant\Courses\ListeCoursesDisponible.aspx" />
     <Content Include="PagesWeb\Participant\Courses\ListeCoursesTerminees.aspx" />
     <Content Include="PagesWeb\Participant\MasterPageParticipant.Master" />
@@ -738,13 +734,6 @@
     <Compile Include="Administration\Courses\AjouterCourse.aspx.designer.cs">
       <DependentUpon>AjouterCourse.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administration\Courses\DetailCourse.aspx.cs">
-      <DependentUpon>DetailCourse.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administration\Courses\DetailCourse.aspx.designer.cs">
-      <DependentUpon>DetailCourse.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Administration\Courses\ListeCourses.aspx.cs">
       <DependentUpon>ListeCourses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -773,13 +762,6 @@
     <Compile Include="Administration\Membres\AjouterMembre.aspx.designer.cs">
       <DependentUpon>AjouterMembre.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administration\Membres\DetailMembre.aspx.cs">
-      <DependentUpon>DetailMembre.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administration\Membres\DetailMembre.aspx.designer.cs">
-      <DependentUpon>DetailMembre.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Administration\Membres\ListeMembres.aspx.cs">
       <DependentUpon>ListeMembres.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -794,10 +776,6 @@
     <Compile Include="PagesWeb\Connexion.aspx.designer.cs">
       <DependentUpon>Connexion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PagesWeb\Connexion2.aspx.cs">
-      <DependentUpon>Connexion2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="PagesWeb\Inscription.aspx.cs">
       <DependentUpon>Inscription.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -811,13 +789,6 @@
     </Compile>
     <Compile Include="PagesWeb\Participant\Courses\DetailCourseDisponible.aspx.designer.cs">
       <DependentUpon>DetailCourseDisponible.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PagesWeb\Participant\Courses\DetailCourseTerminee.aspx.cs">
-      <DependentUpon>DetailCourseTerminee.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PagesWeb\Participant\Courses\DetailCourseTerminee.aspx.designer.cs">
-      <DependentUpon>DetailCourseTerminee.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesWeb\Participant\Courses\ListeCoursesDisponible.aspx.cs">
       <DependentUpon>ListeCoursesDisponible.aspx</DependentUpon>

@@ -25,6 +25,10 @@ namespace WebUI.PagesWeb
                 
                 if (persConnecte.bIsAdmin != true)
                 {
+                    
+                    string IDvariable = "ID";
+                    HttpContext.Current.Session.Add(IDvariable, persConnecte);
+
                     Response.Redirect("~/PagesWeb/Participant/Dashboard.aspx");
                 }
                 else

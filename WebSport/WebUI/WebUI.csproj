@@ -199,6 +199,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="PagesWeb\Connexion2.aspx" />
     <Content Include="PagesWeb\Participant\Dashboard.aspx" />
     <Content Include="Scripts\amcharts\amcharts.js" />
     <Content Include="Scripts\amcharts\funnel.js" />
@@ -789,6 +790,13 @@
     </Compile>
     <Compile Include="PagesWeb\Connexion.aspx.designer.cs">
       <DependentUpon>Connexion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesWeb\Connexion2.aspx.cs">
+      <DependentUpon>Connexion2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesWeb\Connexion2.aspx.designer.cs">
+      <DependentUpon>Connexion2.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesWeb\Inscription.aspx.cs">
       <DependentUpon>Inscription.aspx</DependentUpon>

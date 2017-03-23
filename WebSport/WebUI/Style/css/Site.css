@@ -179,3 +179,13 @@ ul, li {
 a {
     cursor: pointer !important;
 }
+
+.card-connect {
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+    background-color: #fff;
+    border-radius: 2px;
+    
+    width:100%;
+    
+    
+}

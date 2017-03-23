@@ -493,7 +493,6 @@
     <Content Include="Administration\Membres\AjouterMembre.aspx" />
     <Content Include="Administration\Membres\DetailMembre.aspx" />
     <Content Include="Administration\Membres\ListeMembres.aspx" />
-    <Content Include="PagesWeb\Connexion.aspx" />
     <Content Include="PagesWeb\Inscription.aspx" />
     <Content Include="PagesWeb\Participant\Courses\DetailCourseDisponible.aspx" />
     <Content Include="PagesWeb\Participant\Courses\DetailCourseTerminee.aspx" />
@@ -786,13 +785,6 @@
     </Compile>
     <Compile Include="Administration\Membres\ListeMembres.aspx.designer.cs">
       <DependentUpon>ListeMembres.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PagesWeb\Connexion.aspx.cs">
-      <DependentUpon>Connexion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PagesWeb\Connexion.aspx.designer.cs">
-      <DependentUpon>Connexion.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesWeb\Connexion2.aspx.cs">
       <DependentUpon>Connexion2.aspx</DependentUpon>

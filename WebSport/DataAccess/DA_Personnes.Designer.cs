@@ -1185,7 +1185,7 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM " +
@@ -1193,19 +1193,27 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        COUNT(Sexe) AS nb, Sexe\r\nFROM            Personne\r\nGROUP BY Sexe";
+            this._commandCollection[1].CommandText = "SELECT        Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActi" +
+                "f, Sexe, bIsAdmin\r\nFROM            Personne\r\nWHERE        (Email = @Email) AND (" +
+                "MotDePasse = @MotDePasse)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MotDePasse", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MotDePasse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActi" +
-                "f, Sexe, bIsAdmin\r\nFROM            Personne\r\nWHERE        (Id = @Id)";
+            this._commandCollection[2].CommandText = "SELECT        COUNT(Sexe) AS nb, Sexe\r\nFROM            Personne\r\nGROUP BY Sexe";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif, Sexe" +
-                ", bIsAdmin FROM Personne";
+            this._commandCollection[3].CommandText = "SELECT        Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActi" +
+                "f, Sexe, bIsAdmin\r\nFROM            Personne\r\nWHERE        (Id = @Id)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif, Sexe" +
+                ", bIsAdmin FROM Personne";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1236,8 +1244,31 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DA_Personnes.PersonneDataTable DonneNbPersonneParSexe() {
+        public virtual DA_Personnes.PersonneDataTable ConnexionPersonne(string Email, string MotDePasse) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Email == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Email));
+            }
+            if ((MotDePasse == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MotDePasse));
+            }
+            DA_Personnes.PersonneDataTable dataTable = new DA_Personnes.PersonneDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DA_Personnes.PersonneDataTable DonneNbPersonneParSexe() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             DA_Personnes.PersonneDataTable dataTable = new DA_Personnes.PersonneDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1248,7 +1279,7 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DA_Personnes.PersonneDataTable DonnePersonnePourID(int Id) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
             DA_Personnes.PersonneDataTable dataTable = new DA_Personnes.PersonneDataTable();
             this.Adapter.Fill(dataTable);
@@ -1260,7 +1291,7 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DA_Personnes.PersonneDataTable DonneToutes() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             DA_Personnes.PersonneDataTable dataTable = new DA_Personnes.PersonneDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

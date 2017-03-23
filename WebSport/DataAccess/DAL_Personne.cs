@@ -47,7 +47,7 @@ namespace DAL
 
         public static DataTable DonneNombrePersonneParSexe()
         {
-            return new DA_PersonnesTableAdapters.PersonneTableAdapter().DonneNombrePersonneParSexe();
+            return new DA_PersonnesTableAdapters.PersonneTableAdapter().DonneNbPersonneParSexe();
         }
     }
 }

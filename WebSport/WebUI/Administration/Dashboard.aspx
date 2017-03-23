@@ -7,7 +7,8 @@
 
     <script type="text/javascript">
         var str = <%DonneStatsMembre();%>;
-        var dataProvider = JSON.parse(str);
+        var json = JSON.stringify(eval("(" + str + ")"));
+        var dataProvider = JSON.parse(json);
 
         AmCharts.makeChart("chartdiv",
             {

@@ -1193,7 +1193,7 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "select count (*) as nb , Sexe\r\nfrom Personne\r\ngroup by Sexe";
+            this._commandCollection[1].CommandText = "SELECT        COUNT(Sexe) AS nb, Sexe\r\nFROM            Personne\r\nGROUP BY Sexe";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -1236,7 +1236,7 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DA_Personnes.PersonneDataTable DonneNombrePersonneParSexe() {
+        public virtual DA_Personnes.PersonneDataTable DonneNbPersonneParSexe() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             DA_Personnes.PersonneDataTable dataTable = new DA_Personnes.PersonneDataTable();
             this.Adapter.Fill(dataTable);

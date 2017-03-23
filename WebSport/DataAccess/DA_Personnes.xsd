@@ -99,12 +99,12 @@ SELECT Id, Nom, Prenom, Email, Telephone, DateNaissance, MotDePasse, bActif FROM
               <Mapping SourceColumn="bIsAdmin" DataSetColumn="bIsAdmin" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="WebSportConnectionString (Settings)" DbObjectName="WebSport.dbo.Personne" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="DonneNombrePersonneParSexe" GetMethodModifier="Public" GetMethodName="DonneNombrePersonneParSexe" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="DonneNombrePersonneParSexe" UserSourceName="DonneNombrePersonneParSexe">
+              <DbSource ConnectionRef="WebSportConnectionString (Settings)" DbObjectName="WebSport.dbo.Personne" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="DonneNbPersonneParSexe" GetMethodModifier="Public" GetMethodName="DonneNbPersonneParSexe" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="DonneNbPersonneParSexe" UserSourceName="DonneNbPersonneParSexe">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>select count (*) as nb , Sexe
-from Personne
-group by Sexe</CommandText>
+                    <CommandText>SELECT        COUNT(Sexe) AS nb, Sexe
+FROM            Personne
+GROUP BY Sexe</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

@@ -36,7 +36,7 @@
                         <a href="#">Tableau de bord</a>
                     </li>
                     <li>
-                        <a href="#">Gestion des membres</a>
+                     <a href="ListeMembres.aspx">Membres/ListeMembres.aspx</a>
                     </li>
                     <li>
                         <a href="#">Gestion des courses</a>
@@ -48,13 +48,13 @@
                             <label>WebSport v1.0.0</label>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
         <div id="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
             </asp:ContentPlaceHolder>
         </div>
 

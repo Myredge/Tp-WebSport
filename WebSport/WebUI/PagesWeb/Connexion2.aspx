@@ -1,11 +1,21 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Connexion.aspx.cs" Inherits="WebUI.PagesWeb.Connexion" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Connexion2.aspx.cs" Inherits="WebUI.PagesWeb.Connexion2" %>
 
+<!DOCTYPE html>
 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+       <link href="../Style/css/bootstrap.min.css" rel="stylesheet" />
 
-     <div class="container">
+    <link href="../Style/css/Site.css" rel="stylesheet" />
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+ 
+    <div class="container">
+      <form class="form-signin" runat="server">
+  
 
       
         <h2 class="form-signin-heading">Please sign in</h2>
@@ -16,7 +26,8 @@
                                         <asp:Label runat="server" ID="LBL_EMAIL"  Text="Email:"></asp:Label>
                                     </div>
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:TextBox runat="server" CssClass="form-group" placeholder="Email address" ID="TB_EMAIL_VALUE"></asp:TextBox>
+                                        <asp:TextBox runat="server" CssClass="form-group" ID="TB_EMAIL_VALUE"></asp:TextBox>
+                                        
                                     </div>
                                 </div>
 
@@ -25,23 +36,25 @@
                                         <asp:Label runat="server" ID="LBL_PASSWORD" Text="Password:"></asp:Label>
                                     </div>
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:TextBox runat="server" type="password" CssClass="form-group" ID="TB_PASSWORD_VALUE"></asp:TextBox>
+                                        <asp:TextBox runat="server" CssClass="form-group" ID="TB_PASSWORD_VALUE"></asp:TextBox>
                                     </div>
                                 </div>
 
 
                <div class="row">
                           <div class="col-md-2 offset-md-10 col-xs-2 offset--xs-5">
-              <asp:Button runat="server" CssClass="btn btn-primary" Text="Se connecter" OnClick="LoginClick" />
+                                        <asp:Button runat="server" CssClass="btn btn-primary" Text="Se connecter" OnClick="LoginClick" />
                                     </div>
                                 </div>
               </div>
         
       
 
-    </div> <!-- /container -->
+   
+      
+      </form>
 
+     </div> <!-- /container -->
 
-
-
-</asp:Content>
+</body>
+</html>

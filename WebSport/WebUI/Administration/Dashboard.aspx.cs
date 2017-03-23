@@ -28,9 +28,9 @@ namespace WebUI.Administration
         {
 
 
-            string json = BLL_Statistique.NombrePersonneParSexe();
+           // string json = BLL_Statistique.NombrePersonneParSexe();
 
-            return json;
+            return "toto";
         }
     }
 }

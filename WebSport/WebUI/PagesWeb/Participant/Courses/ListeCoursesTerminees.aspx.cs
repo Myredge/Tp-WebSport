@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,24 @@ namespace WebUI.PagesWeb.Participant.Courses
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.BindGrid();
+        }
+
+        private void BindGrid()
+        {
+
+
+            GV_LISTE_COURSE_TERMINEE.DataSource = BLL_Course.ListeCoursesTerminees();
+            GV_LISTE_COURSE_TERMINEE.DataBind();
+
 
         }
+
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GV_LISTE_COURSE_TERMINEE.PageIndex = e.NewPageIndex;
+            this.BindGrid();
+        }
+
     }
 }

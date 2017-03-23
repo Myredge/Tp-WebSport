@@ -24,8 +24,42 @@ namespace BusinessService
             foreach (DataRow oRow in dt)
             {
                 Course course = new Course(oRow["Titre"].ToString(), oRow["Description"].ToString(),
-                 Convert.ToDateTime(oRow["DateDebut"].ToString()),
-                    Convert.ToDateTime(oRow["DateFin"].ToString()), oRow["Ville"].ToString()
+                 Convert.ToDateTime(oRow["DateStart"].ToString()),
+                    Convert.ToDateTime(oRow["DateEnd"].ToString()), oRow["Ville"].ToString()
+                    );
+
+                courses.Add(course);
+            }
+
+            return courses;
+        }
+        public static List<Course> ListeCoursesDisponibles()
+        {
+            List<Course> courses = new List<Course>();
+            DA_Courses.CourseDataTable dt = DAL_Course.DonneCoursesEnCours();
+
+            foreach (DataRow oRow in dt)
+            {
+                Course course = new Course(oRow["Titre"].ToString(), oRow["Description"].ToString(),
+                 Convert.ToDateTime(oRow["DateStart"].ToString()),
+                    Convert.ToDateTime(oRow["DateEnd"].ToString()), oRow["Ville"].ToString()
+                    );
+
+                courses.Add(course);
+            }
+
+            return courses;
+        }
+        public static List<Course> ListeCoursesTerminees()
+        {
+            List<Course> courses = new List<Course>();
+            DA_Courses.CourseDataTable dt = DAL_Course.DonneCoursesTerminees();
+
+            foreach (DataRow oRow in dt)
+            {
+                Course course = new Course(oRow["Titre"].ToString(), oRow["Description"].ToString(),
+                 Convert.ToDateTime(oRow["DateStart"].ToString()),
+                    Convert.ToDateTime(oRow["DateEnd"].ToString()), oRow["Ville"].ToString()
                     );
 
                 courses.Add(course);

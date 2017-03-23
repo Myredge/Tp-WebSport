@@ -25,13 +25,14 @@
                 <div class="ws-card">
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
-                            <asp:GridView runat="server" ID="GV_LISTE_MEMBRE" AutoGenerateColumns="false" AllowPaging="true"
-                                 PageSize="100" CssClass="table table-bordered">
+                            <asp:GridView runat="server" ID="GV_LISTE_COURSE_TERMINEE" AutoGenerateColumns="false" AllowPaging="true"
+                              OnPageIndexChanging="OnPageIndexChanging"   PageSize="100" CssClass="table table-bordered">
                                 <Columns>
-                                    <asp:BoundField ItemStyle-Width="30%" DataField="Nom" HeaderText="Nom" />
-                                    <asp:BoundField ItemStyle-Width="30%" DataField="Prenom" HeaderText="Prenom" />
-                                    <asp:BoundField ItemStyle-Width="30%" DataField="Email" HeaderText="Email" />
-                                    <asp:BoundField ItemStyle-Width="10%" DataField="bActif" HeaderText="bActif" />
+                                   <asp:BoundField ItemStyle-Width="30%" DataField="Titre" HeaderText="Titre" />
+                                    <asp:BoundField ItemStyle-Width="30%" DataField="Description" HeaderText="Description" />
+                                    <asp:BoundField ItemStyle-Width="30%" DataField="DateDebut" HeaderText="DateDebut" />
+                                    <asp:BoundField ItemStyle-Width="10%" DataField="DateFin" HeaderText="DateFin" />
+                                    <asp:BoundField ItemStyle-Width="10%" DataField="Ville" HeaderText="Ville" />
                                 </Columns>
 
                             </asp:GridView>

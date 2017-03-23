@@ -33,13 +33,16 @@
             <div class="sidebar-collapse">
                 <ul id="menu" class="ws-first-level">
                     <li>
-                        <a href="#">Tableau de bord</a>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Administration/Dashboard.aspx" Text="Tableau de Bord"></asp:HyperLink>
+
                     </li>
                     <li>
-                     <a href="ListeMembres.aspx">Membres/ListeMembres.aspx</a>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Administration/Membres/ListeMembres.aspx" Text="Gestion des Membres"></asp:HyperLink>
+
                     </li>
                     <li>
-                        <a href="#">Gestion des courses</a>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Administration/Courses/ListeCourses.aspx" Text="Gestion des Courses"></asp:HyperLink>
+
                     </li>
                 </ul>
                 <div class="al-footer">
@@ -54,7 +57,6 @@
 
         <div id="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
             </asp:ContentPlaceHolder>
         </div>
 

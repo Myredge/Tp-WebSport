@@ -29,14 +29,17 @@
         <div id="menuContainer" class="ws-main-menu">
             <div class="sidebar-collapse">
                 <ul id="menu" class="ws-first-level">
-                    <li>
-                        <a href="#">Tableau de bord</a>
+                     <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/PagesWeb/Participant/Dashboard.aspx" Text="Tableau de Bord"></asp:HyperLink>
+
                     </li>
                     <li>
-                        <a href="#">Gestion des membres</a>
+                        <asp:HyperLink runat="server" NavigateUrl="~/PagesWeb/Participant/Courses/ListeCoursesDisponible.aspx" Text="Courses Disponibles"></asp:HyperLink>
+
                     </li>
                     <li>
-                        <a href="#">Gestion des courses</a>
+                        <asp:HyperLink runat="server" NavigateUrl="~/PagesWeb/Participant/Courses/ListeCoursesTerminees.aspx" Text="Courses Terminées"></asp:HyperLink>
+
                     </li>
                 </ul>
                 <div class="al-footer">

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BusinessObject;
+using BusinessService;
 
 namespace WebUI.PagesWeb
 {
@@ -19,9 +21,10 @@ namespace WebUI.PagesWeb
         {
             try
             {
-                //Personne personne = BLL_Personne.personne();
+                
+               
 
-                //BLL_Personne.addPersonne(personne);
+                //BLL_Personne.getPersonneConnecté(TB_EMAIL_VALUE.tex);
             }
             catch
             {

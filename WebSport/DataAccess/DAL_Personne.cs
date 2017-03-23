@@ -49,5 +49,10 @@ namespace DAL
         {
             return new DA_PersonnesTableAdapters.PersonneTableAdapter().DonneNbPersonneParSexe();
         }
+
+        public static DA_Personnes.PersonneDataTable ConnexionPersonne(string Email, string Mdp)
+        {
+            return new DA_PersonnesTableAdapters.PersonneTableAdapter().ConnexionPersonne(Email, Mdp);
+        }
     }
 }

@@ -69,5 +69,17 @@ namespace BusinessService
 
             return pers;
         }
+
+        public static Personne getPersonneConnecté(string strEmail, string strMdp)
+        {
+
+            DataRow oRow = DAL_Personne.ConnexionPersonne(strEmail, strMdp)[0];
+
+            Personne pers = new Personne(oRow["Nom"].ToString(), oRow["Prenom"].ToString(), oRow["Email"].ToString(), oRow["MotDePasse"].ToString(), oRow["Sexe"].ToString());
+
+            return pers;
+        }
+
+
     }
 }

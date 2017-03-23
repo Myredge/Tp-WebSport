@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-8 col-sm-7 col-xs-6">
                     <div class="ws-title ">
-                        Liste courses terminées 
+                        Courses Terminées 
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-5 col-xs-6">

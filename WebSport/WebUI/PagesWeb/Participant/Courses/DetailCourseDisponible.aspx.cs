@@ -15,9 +15,9 @@ namespace WebUI.PagesWeb.Participant.Courses
         {
             int nIdCourse = Convert.ToInt32(Request.QueryString["Id"]);
             Course course = BLL_Course.getCourse(nIdCourse);
-            
+            Personne pers = (Personne)HttpContext.Current.Session["ID"];
 
-            //Participation part = BLL_Participation.
+            Participation part = BLL_Participation.getUneParticipation(pers, course);
 
             if(course != null)
             {
@@ -28,24 +28,28 @@ namespace WebUI.PagesWeb.Participant.Courses
                 LBL_DATE_FIN_VALUE.Text = course.DateFin.ToString();
             }
 
-            if (false)
+            if (part!=null)
             {
-                BTN_ANNULER.Visible = true;
-                BTN_PARTICIPER.Visible = false;
-            }
-            if(true)
-            {
-                BTN_PARTICIPER.Visible = true;
                 BTN_ANNULER.Visible = false;
+                BTN_PARTICIPER.Visible = true;
+            }
+            else
+            {
+                BTN_PARTICIPER.Visible = false;
+                BTN_ANNULER.Visible = true;
             }
 
 
         }
         protected void participerClick(object sender, EventArgs e)
         {
+            int nIdCourse = Convert.ToInt32(Request.QueryString["Id"]);
+            Course course = BLL_Course.getCourse(nIdCourse);
+            Personne pers = (Personne)HttpContext.Current.Session["ID"];
             try
             {
-
+                Participation part = new Participation(pers, course, true, false);
+                BLL_Participation.AjouterUneParticipation(part);
             }
             catch
             {
@@ -60,9 +64,12 @@ namespace WebUI.PagesWeb.Participant.Courses
 
         protected void annulerClick(object sender, EventArgs e)
         {
+            int nIdCourse = Convert.ToInt32(Request.QueryString["Id"]);
+            Course course = BLL_Course.getCourse(nIdCourse);
+            Personne pers = (Personne)HttpContext.Current.Session["ID"];
             try
             {
-
+                BLL_Participation.supprimerUneParticipation(pers,course);
             }
             catch
             {

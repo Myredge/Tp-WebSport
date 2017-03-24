@@ -974,20 +974,11 @@ namespace DAL.DA_ParticipationsTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Participation] WHERE (([PersonneId] = @Original_PersonneId) AND ([CourseId] = @Original_CourseId) AND ([EstCompetiteur] = @Original_EstCompetiteur) AND ([EstOrganisateur] = @Original_EstOrganisateur) AND ((@IsNull_Temps = 1 AND [Temps] IS NULL) OR ([Temps] = @Original_Temps)) AND ((@IsNull_nRank = 1 AND [nRank] IS NULL) OR ([nRank] = @Original_nRank)) AND ((@IsNull_bAbandon = 1 AND [bAbandon] IS NULL) OR ([bAbandon] = @Original_bAbandon)) AND ((@IsNull_nDistanceParcouru = 1 AND [nDistanceParcouru] IS NULL) OR ([nDistanceParcouru] = @Original_nDistanceParcouru)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM Participation\r\nWHERE        (PersonneId = @Original_PersonneId) AND (" +
+                "CourseId = @Original_CourseId)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonneId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonneId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CourseId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CourseId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstCompetiteur", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstCompetiteur", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstOrganisateur", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstOrganisateur", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Temps", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Temps", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Temps", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Temps", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nRank", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nRank", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nRank", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nRank", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bAbandon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bAbandon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bAbandon", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bAbandon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nDistanceParcouru", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nDistanceParcouru", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nDistanceParcouru", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nDistanceParcouru", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonneId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonneId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CourseId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CourseId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Participation] ([PersonneId], [CourseId], [EstCompetiteur], [EstOrganisateur], [Temps], [nRank], [bAbandon], [nDistanceParcouru]) VALUES (@PersonneId, @CourseId, @EstCompetiteur, @EstOrganisateur, @Temps, @nRank, @bAbandon, @nDistanceParcouru);
@@ -1038,7 +1029,7 @@ SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAba
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAban" +
@@ -1047,20 +1038,35 @@ SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAba
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAban" +
-                "don, nDistanceParcouru FROM dbo.Participation\r\nWHERE CourseId = @CourseId";
+                "don, nDistanceParcouru FROM dbo.Participation\r\n where PersonneId=@PersonneId  an" +
+                "d CourseId=@CourseId ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonneId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonneId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CourseId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CourseId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAban" +
-                "don, nDistanceParcouru FROM dbo.Participation";
+                "don, nDistanceParcouru FROM dbo.Participation\r\nWHERE CourseId = @CourseId";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CourseId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CourseId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAban" +
-                "don, nDistanceParcouru FROM dbo.Participation\r\nWHERE PersonneId = @PersonneId";
+                "don, nDistanceParcouru FROM dbo.Participation";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonneId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonneId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAban" +
+                "don, nDistanceParcouru FROM dbo.Participation\r\nWHERE PersonneId = @PersonneId";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonneId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonneId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "DELETE FROM Participation\r\nWHERE        (PersonneId = @Original_PersonneId) AND (" +
+                "CourseId = @Original_CourseId)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonneId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonneId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CourseId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CourseId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1091,8 +1097,21 @@ SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAba
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DA_Participations.ParticipationDataTable DonneTousLesParticipantsPourCourseID(int CourseId) {
+        public virtual DA_Participations.ParticipationDataTable donneCoursePourPersonneIdEtCourseID(int PersonneId, int CourseId) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(PersonneId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CourseId));
+            DA_Participations.ParticipationDataTable dataTable = new DA_Participations.ParticipationDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DA_Participations.ParticipationDataTable DonneTousLesParticipantsPourCourseID(int CourseId) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CourseId));
             DA_Participations.ParticipationDataTable dataTable = new DA_Participations.ParticipationDataTable();
             this.Adapter.Fill(dataTable);
@@ -1104,7 +1123,7 @@ SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAba
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DA_Participations.ParticipationDataTable DonneToutes() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             DA_Participations.ParticipationDataTable dataTable = new DA_Participations.ParticipationDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1115,7 +1134,7 @@ SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAba
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DA_Participations.ParticipationDataTable DonneToutesLesCoursesPourPersonneID(int PersonneId) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(PersonneId));
             DA_Participations.ParticipationDataTable dataTable = new DA_Participations.ParticipationDataTable();
             this.Adapter.Fill(dataTable);
@@ -1155,43 +1174,9 @@ SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAba
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PersonneId, int Original_CourseId, bool Original_EstCompetiteur, bool Original_EstOrganisateur, global::System.Nullable<global::System.TimeSpan> Original_Temps, global::System.Nullable<int> Original_nRank, global::System.Nullable<bool> Original_bAbandon, global::System.Nullable<double> Original_nDistanceParcouru) {
+        public virtual int Delete(int Original_PersonneId, int Original_CourseId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PersonneId));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_CourseId));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_EstCompetiteur));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_EstOrganisateur));
-            if ((Original_Temps.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.TimeSpan)(Original_Temps.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_nRank.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_nRank.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_bAbandon.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((bool)(Original_bAbandon.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_nDistanceParcouru.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((double)(Original_nDistanceParcouru.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1364,6 +1349,31 @@ SELECT PersonneId, CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAba
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(bool EstCompetiteur, bool EstOrganisateur, global::System.Nullable<global::System.TimeSpan> Temps, global::System.Nullable<int> nRank, global::System.Nullable<bool> bAbandon, global::System.Nullable<double> nDistanceParcouru, int Original_PersonneId, int Original_CourseId, bool Original_EstCompetiteur, bool Original_EstOrganisateur, global::System.Nullable<global::System.TimeSpan> Original_Temps, global::System.Nullable<int> Original_nRank, global::System.Nullable<bool> Original_bAbandon, global::System.Nullable<double> Original_nDistanceParcouru) {
             return this.Update(Original_PersonneId, Original_CourseId, EstCompetiteur, EstOrganisateur, Temps, nRank, bAbandon, nDistanceParcouru, Original_PersonneId, Original_CourseId, Original_EstCompetiteur, Original_EstOrganisateur, Original_Temps, Original_nRank, Original_bAbandon, Original_nDistanceParcouru);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int supprimerParticipationParPersonneIdEtCourseId(int Original_PersonneId, int Original_CourseId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            command.Parameters[0].Value = ((int)(Original_PersonneId));
+            command.Parameters[1].Value = ((int)(Original_CourseId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

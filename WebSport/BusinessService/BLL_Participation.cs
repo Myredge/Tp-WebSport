@@ -31,5 +31,25 @@ namespace BusinessService
 
             return participations;
         }
+        public static Participation getUneParticipation(Personne pers,Course course)
+        {
+
+            DataRow oRow = DAL_Participation.DonneParticipationPourPersonneIDEtCourseId(pers.ID, course.ID)[0];
+
+            Participation participation = new Participation(BLL_Personne.getPersonne(Convert.ToInt32(oRow["PersonneId"])), BLL_Course.getCourse(Convert.ToInt32(oRow["CourseId"])) , Convert.ToBoolean(oRow["EstCompetiteur"]), Convert.ToBoolean(oRow["EstOrganisateur"]));
+
+
+            return participation;
+        }
+        public static void supprimerUneParticipation(Personne pers,Course cours)
+        {
+            DAL_Participation.SupprimerParticipationPourPersonneIDEtCourseId(pers.ID, cours.ID);
+
+        }
+        public static void AjouterUneParticipation(Participation partcipation)
+        {
+            DAL_Participation.AjouterUneParticipation(partcipation.personne.ID, partcipation.course.ID, partcipation.EstCompetiteur, partcipation.EstOrganisateur);
+
+        }
     }
 }

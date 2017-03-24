@@ -119,5 +119,23 @@ namespace WebUI.PagesWeb.Participant.Courses {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LBL_ARRIVE;
+        
+        /// <summary>
+        /// Contrôle BTN_PARTICIPER.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTN_PARTICIPER;
+        
+        /// <summary>
+        /// Contrôle BTN_ANNULER.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTN_ANNULER;
     }
 }

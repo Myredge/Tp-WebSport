@@ -178,17 +178,17 @@ a {
     box-shadow: 0 5px 5px rgba(0,0,0,.15);
     background-color: #fff;
     border-radius: 5px;
-padding-bottom:10px;
+    padding-bottom:10px;
 }
 
 .body-connect {
     background-image: url('../Images/running.jpeg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+     height: 100%;
     background-size: cover;
-    /*margin-top: 12%;*/
-    margin-bottom:15%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+   
 }
 
 .ws-spacing {

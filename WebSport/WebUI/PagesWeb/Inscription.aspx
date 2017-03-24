@@ -10,7 +10,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
-<body class="body-connect">
+<body >
+    <div class="body-connect">
     <div class="container">
         <form id="form1" runat="server">
             <div class="row" style="padding-top: 10%;">
@@ -101,5 +102,6 @@
             </div>
         </form>
     </div>
+        </div>
 </body>
 </html>

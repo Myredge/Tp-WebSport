@@ -14,7 +14,7 @@ namespace WebUI.PagesWeb.Participant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Personne pers = (Personne)HttpContext.Current.Session["ID"];
 
         }
 

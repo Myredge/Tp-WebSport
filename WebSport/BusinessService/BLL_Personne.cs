@@ -75,7 +75,7 @@ namespace BusinessService
 
             DataRow oRow = DAL_Personne.ConnexionPersonne(strEmail, strMdp)[0];
 
-            Personne pers = new Personne(oRow["Nom"].ToString(), oRow["Prenom"].ToString(), oRow["Email"].ToString(), oRow["MotDePasse"].ToString(), oRow["Sexe"].ToString(), Convert.ToBoolean(oRow["bActif"]), Convert.ToBoolean(oRow["bIsAdmin"]));
+            Personne pers = new Personne(Convert.ToInt32(oRow["Id"]),oRow["Nom"].ToString(), oRow["Prenom"].ToString(), oRow["Email"].ToString(), oRow["MotDePasse"].ToString(), oRow["Sexe"].ToString(), Convert.ToBoolean(oRow["bActif"]), Convert.ToBoolean(oRow["bIsAdmin"]));
 
             return pers;
         }

@@ -39,6 +39,7 @@ namespace BusinessObject
             this.bIsAdmin = false;
         }
 
+
         /// <summary>
         /// Constructeur lors de la connexion
         /// </summary>
@@ -60,6 +61,20 @@ namespace BusinessObject
             this.bActif = bActif;
             this.bIsAdmin = bIsAdmin;
         }
+
+        public Personne(int nId, string strNom, string strPrenom, string strEmail, string strMotDePasse, string strSexe, bool bActif, bool bIsAdmin)
+        {
+            this.ID = nId;
+            this.Nom = strNom;
+            this.Prenom = strPrenom;
+            this.Email = strEmail;
+            this.MotDePasse = strMotDePasse;
+            this.bActif = bActif;
+            this.Sexe = strSexe;
+            this.bActif = bActif;
+            this.bIsAdmin = bIsAdmin;
+        }
+
 
         /// <summary>
         /// Constructeur lors de création de compte côté admin

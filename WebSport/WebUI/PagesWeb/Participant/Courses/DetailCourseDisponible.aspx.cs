@@ -33,7 +33,7 @@ namespace WebUI.PagesWeb.Participant.Courses
                 BTN_ANNULER.Visible = true;
                 BTN_PARTICIPER.Visible = false;
             }
-            if(true)
+            else
             {
                 BTN_PARTICIPER.Visible = true;
                 BTN_ANNULER.Visible = false;

@@ -5,12 +5,58 @@
     <script type="text/javascript">
 
         var map;
+        
+        var myLatLng = { lat: 47.2176443291074, lng: -1.55181884765625 };
+
         function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 47.2176443291074, lng: -1.55181884765625 },
-                zoom: 8
-            });
+            var latlng = new google.maps.LatLng(47.2176443291074, -1.55181884765625);
+            var myOptions = {
+                zoom: 10,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+
+            var positions = [
+    ['pos0', 47.3176443291074, -1.55181884765625],
+    ['pos1', 47.4176443291075, -1.55181884765625],
+    ['pos3', 47.2176443291076, -1.55181884765625]
+            ];
+
+            // Création d'un Array vide
+            var path = [];
+            for (var i = 0; i < positions.length; i++) {
+                var pos = positions[i];
+                var myLatLng = new google.maps.LatLng(pos[1], pos[2]);
+
+                //construction et affichage des positions
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    title: 'test',
+                    map: map
+                });
+
+                // Ajout du LatLng à l'Array path
+                path[i] = myLatLng;
+
+                var parcours = new google.maps.Polyline({
+                    path: path,
+                    strokeColor: "#FF0000",
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                });
+                parcours.setMap(map);
+
+
+            }
         }
+
+     
+
+     
+
+
 
     </script>
     <script async defer
@@ -103,21 +149,21 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 col-xs-6">
-                                                 <asp:Label runat="server" ID="LBL_ARRIVE" Text="Arrivé:"></asp:Label>
+                                                <asp:Label runat="server" ID="LBL_ARRIVE" Text="Arrivé:"></asp:Label>
                                             </div>
                                             <div class="col-md-6 col-xs-6">
-                                                  <%-- A PAS FAIRE --%>
+                                                <%-- A PAS FAIRE --%>
                                             </div>
 
                                         </div>
 
-                                           <div class="row">
-                                            
+                                        <div class="row">
+
                                             <div class="col-md-6 col-xs-6">
-                                              
-                                                <asp:Button runat="server" CssClass="btn btn-success" ID="BTN_PARTICIPER" Text="PARTICIPER"  OnClick="participerClick" />
-                                                <asp:Button runat="server" CssClass="btn btn-danger" ID="BTN_ANNULER" Text="ANUULER PARTICIPATION"  OnClick="annulerClick" />
-                                                
+
+                                                <asp:Button runat="server" CssClass="btn btn-success" ID="BTN_PARTICIPER" Text="PARTICIPER" OnClick="participerClick" />
+                                                <asp:Button runat="server" CssClass="btn btn-danger" ID="BTN_ANNULER" Text="ANUULER PARTICIPATION" OnClick="annulerClick" />
+
                                             </div>
 
                                         </div>

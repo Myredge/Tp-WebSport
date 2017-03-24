@@ -570,6 +570,7 @@
     <Content Include="Style\css\bootstrap-reboot.min.css" />
     <Content Include="Style\css\bootstrap.css" />
     <Content Include="Style\css\bootstrap.min.css" />
+    <Content Include="Style\Images\pin.png" />
     <Content Include="Style\Images\running.jpeg" />
     <Content Include="Style\Images\jogging-perte-de-graisse.jpeg" />
     <Content Include="Style\Images\Running-in-Dublin.jpg" />

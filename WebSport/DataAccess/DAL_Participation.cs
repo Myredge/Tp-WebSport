@@ -36,6 +36,24 @@ namespace DAL
         {
             return new DA_ParticipationsTableAdapters.ParticipationTableAdapter().DonneToutesLesCoursesPourPersonneID(nIdPersonne);
         }
+        public static DA_Participations.ParticipationDataTable DonneParticipationPourPersonneIDEtCourseId(int nIdPersonne, int courseId)
+        {
+            return new DA_ParticipationsTableAdapters.ParticipationTableAdapter().donneCoursePourPersonneIdEtCourseID(nIdPersonne, courseId);
+        }
+        public static void  SupprimerParticipationPourPersonneIDEtCourseId(int nIdPersonne, int courseId)
+        {
+            new DA_ParticipationsTableAdapters.ParticipationTableAdapter().Delete(nIdPersonne, courseId);
+       
+        }
+
+        public static void AjouterUneParticipation(int nIdPersonne, int courseId, Boolean estParticipant, Boolean estOrganisateur)
+        {
+            new DA_ParticipationsTableAdapters.ParticipationTableAdapter().Insert(nIdPersonne, courseId,estParticipant, estOrganisateur,null,
+                null,null,null);
+
+        }
+
+
 
     }
 }

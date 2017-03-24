@@ -48,6 +48,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DA_Courses.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DA_Participations.cs">
+      <DependentUpon>DA_Participations.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DA_Participations.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

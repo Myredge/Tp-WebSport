@@ -7,12 +7,17 @@
     <script src="../Scripts/amcharts/themes/light.js"></script>
 
     <script type="text/javascript">
+
+        
+        var data = '<%=DonneStatsMembre()%>';
+        var DataProvider = JSON.parse(data);
+
         AmCharts.makeChart("chartdiv",
              {
                  "type": "pie",
                  "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
                  "titleField": "category",
-                 "valueField": "column-1",
+                 "valueField": "value",
                  "allLabels": [],
                  "balloon": {},
                  "legend": {
@@ -20,20 +25,7 @@
                      "align": "center",
                      "markerType": "circle"
                  },
-                 "dataProvider": [
-                     {
-                         "category": "category 1",
-                         "column-1": 8
-                     },
-                     {
-                         "category": "category 2",
-                         "column-1": 6
-                     },
-                     {
-                         "category": "category 3",
-                         "column-1": 2
-                     }
-                 ]
+                 "dataProvider": DataProvider
              }
          );
     </script>

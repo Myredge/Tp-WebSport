@@ -66,8 +66,8 @@
                                         <div class="col-md-6 col-xs-6">
                                             <div class="form-group">
                                                 <asp:DropDownList runat="server" ID="DDL_SEXE">
-                                                    <asp:ListItem Value="Homme"> Homme </asp:ListItem>
-                                                    <asp:ListItem Value="Femme"> Femme </asp:ListItem>
+                                                    <asp:ListItem Value="Homme">Homme</asp:ListItem>
+                                                    <asp:ListItem Value="Femme">Femme</asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
                                         </div>

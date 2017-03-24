@@ -24,14 +24,14 @@ namespace BusinessService
             foreach (DataRow oRow in dt.Rows)
             {
 
-                object[] o = {oRow["Sexe"].ToString(), Convert.ToInt32(oRow["nb"]) };
+                object[] o = {oRow["Sexe"].ToString(), oRow["nb"] };
                 TableStats.Rows.Add(o);
             }
 
-            int count = TableStats.Rows.Count;
 
             string Json = Common.Utilitaire.DataTableToJsonWithJsonNet(TableStats);
-          
+            
+           
 
             return Json;
         }

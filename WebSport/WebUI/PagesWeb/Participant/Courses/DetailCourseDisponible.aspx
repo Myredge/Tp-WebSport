@@ -94,9 +94,10 @@
                                     <div class="col-md-6 col-xs-6">
                                         <div class="row">
                                             <div class="col-md-6 col-xs-6">
-                                                 <asp:Label runat="server" ID="LBL_DEPART" Text="Départ:"></asp:Label>
+                                                <asp:Label runat="server" ID="LBL_DEPART" Text="Départ:"></asp:Label>
                                             </div>
                                             <div class="col-md-6 col-xs-6">
+                                                <%-- A PAS FAIRE --%>
                                             </div>
 
                                         </div>
@@ -105,6 +106,7 @@
                                                  <asp:Label runat="server" ID="LBL_ARRIVE" Text="Arrivé:"></asp:Label>
                                             </div>
                                             <div class="col-md-6 col-xs-6">
+                                                  <%-- A PAS FAIRE --%>
                                             </div>
 
                                         </div>

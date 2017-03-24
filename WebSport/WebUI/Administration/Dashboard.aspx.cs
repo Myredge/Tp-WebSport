@@ -15,7 +15,7 @@ namespace WebUI.Administration
         protected void Page_Load(object sender, EventArgs e)
         {
 
-         //   string json = BLL_Statistique.NombrePersonneParSexe();
+           string json = BLL_Statistique.NombrePersonneParSexe();
 
         }
 
@@ -25,6 +25,7 @@ namespace WebUI.Administration
             string json = BLL_Statistique.NombrePersonneParSexe();
 
             return json;
+           // return "toto";
         }
     }
 }

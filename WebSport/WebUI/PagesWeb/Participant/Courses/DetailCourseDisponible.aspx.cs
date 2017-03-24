@@ -15,6 +15,9 @@ namespace WebUI.PagesWeb.Participant.Courses
         {
             int nIdCourse = Convert.ToInt32(Request.QueryString["Id"]);
             Course course = BLL_Course.getCourse(nIdCourse);
+            
+
+            //Participation part = BLL_Participation.
 
             if(course != null)
             {
@@ -25,6 +28,50 @@ namespace WebUI.PagesWeb.Participant.Courses
                 LBL_DATE_FIN_VALUE.Text = course.DateFin.ToString();
             }
 
+            if (false)
+            {
+                BTN_ANNULER.Visible = true;
+                BTN_PARTICIPER.Visible = false;
+            }
+            if(true)
+            {
+                BTN_PARTICIPER.Visible = true;
+                BTN_ANNULER.Visible = false;
+            }
+
+
+        }
+        protected void participerClick(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                Response.Redirect("~/Administration/Membres/ListeMembres.aspx");
+            }
+
+        }
+
+        protected void annulerClick(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                Response.Redirect("~/Administration/Membres/ListeMembres.aspx");
+            }
 
         }
     }

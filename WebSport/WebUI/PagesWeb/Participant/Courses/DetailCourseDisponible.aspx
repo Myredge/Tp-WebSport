@@ -110,6 +110,18 @@
                                             </div>
 
                                         </div>
+
+                                           <div class="row">
+                                            
+                                            <div class="col-md-6 col-xs-6">
+                                              
+                                                <asp:Button runat="server" CssClass="btn btn-success" ID="BTN_PARTICIPER" Text="PARTICIPER"  OnClick="participerClick" />
+                                                <asp:Button runat="server" CssClass="btn btn-danger" ID="BTN_ANNULER" Text="ANUULER PARTICIPATION"  OnClick="annulerClick" />
+                                                
+                                            </div>
+
+                                        </div>
+
                                     </div>
                                 </div>
 

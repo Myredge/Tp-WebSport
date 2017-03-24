@@ -74,8 +74,8 @@
                                     <div class="col-md-6 col-xs-6">
                                         <div class="form-group">
                                             <asp:DropDownList runat="server" ID="DDL_SEXE">
-                                                <asp:ListItem Value="M"> M </asp:ListItem>
-                                                <asp:ListItem Value="F"> F </asp:ListItem>
+                                                <asp:ListItem Value="Homme">Homme</asp:ListItem>
+                                                <asp:ListItem Value="Femme">Femme</asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
                                     </div>
@@ -97,8 +97,12 @@
 
                                     </div>
                                 </div>
+                                <br />
                                 <div class="row">
-                                    <div class="col-md-2 offset-md-10 col-xs-2 offset--xs-5">
+                                    <div class="col-md-2  col-xs-2 offset-xs-5">
+                                        <asp:LinkButton runat="server" PostBackUrl="~/Administration/Membres/ListeMembres.aspx" Text="Annuler" CssClass="btn btn-danger"></asp:LinkButton>
+                                    </div>
+                                    <div class="col-md-2 offset-md-8 col-xs-2 offset-xs-5">
                                         <asp:Button runat="server" CssClass="btn btn-primary" Text="Enregistrer" OnClick="enregistrerClick" />
                                     </div>
                                 </div>

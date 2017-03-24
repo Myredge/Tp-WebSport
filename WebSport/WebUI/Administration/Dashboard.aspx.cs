@@ -27,5 +27,17 @@ namespace WebUI.Administration
             return json;
            // return "toto";
         }
+
+        public string DonneStatsCourses()
+        {
+
+            string json = BLL_Statistique.NombreCoursesDipoParVille();
+
+            return json;
+            // return "toto";
+        }
+
+
+   
     }
 }

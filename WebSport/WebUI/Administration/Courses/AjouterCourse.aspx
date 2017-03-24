@@ -19,7 +19,7 @@
 
         <div class="ws-wsp-body">
             <div class="ws-body ws-list-message ws-scroll-container" style="padding: 16px 0px">
-              <%--  <div class="ws-card">
+                <%--  <div class="ws-card">
                     <div id="map" style="height: 500px; width:500px;"></div>
                 </div>--%>
 
@@ -64,18 +64,23 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:Label runat="server"  ID="LBL_DATE_FIN" Text="Date fin:"></asp:Label>
+                                        <asp:Label runat="server" ID="LBL_DATE_FIN" Text="Date fin:"></asp:Label>
                                     </div>
                                     <div class="col-md-6 col-xs-6">
                                         <asp:TextBox runat="server" type="date" CssClass="form-group" ID="TB_DATE_FIN"></asp:TextBox>
                                     </div>
                                 </div>
-                                
-                     
+
+
                                 <div class="row">
-                                    <div class="col-md-2 offset-md-10 col-xs-2 offset--xs-5">
+                                    
+                                    <div class="col-md-2  col-xs-2 offset-xs-5">
+                                        <asp:LinkButton runat="server" PostBackUrl="~/Administration/Courses/ListeCourses.aspx" Text="Annuler" CssClass="btn btn-danger"></asp:LinkButton>
+                                    </div>
+                                    <div class="col-md-2 offset-md-8 col-xs-2 offset-xs-5">
                                         <asp:Button runat="server" CssClass="btn btn-primary" Text="Enregistrer" OnClick="enregistrerClick" />
                                     </div>
+
                                 </div>
 
                             </div>

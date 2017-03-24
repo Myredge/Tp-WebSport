@@ -24,16 +24,24 @@
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
                             <asp:GridView runat="server" ID="GV_LISTE_COURSE" AutoGenerateColumns="false" AllowPaging="true"
-                                OnPageIndexChanging="OnPageIndexChanging" PageSize="100" CssClass="table table-bordered">
+                                OnPageIndexChanging="OnPageIndexChanging" PageSize="10" CssClass="table table-bordered">
                                 <Columns>
-                                    <asp:BoundField ItemStyle-Width="30%" DataField="Titre" HeaderText="Titre" />
-                                    <asp:BoundField ItemStyle-Width="30%" DataField="Description" HeaderText="Description" />
-                                    <asp:BoundField ItemStyle-Width="30%" DataField="Ville" HeaderText="Ville" />
+                                    <asp:BoundField ItemStyle-Width="20%" DataField="Titre" HeaderText="Titre" />
+                                    <asp:BoundField ItemStyle-Width="20%" DataField="Ville" HeaderText="Ville" />
                                     <asp:BoundField ItemStyle-Width="30%" DataField="DateDebut" HeaderText="Date Debut" />
-                                    <asp:BoundField ItemStyle-Width="10%" DataField="DateFin" HeaderText="Date Fin" />
+                                    <asp:BoundField ItemStyle-Width="30%" DataField="DateFin" HeaderText="Date Fin" />
                                 </Columns>
 
                             </asp:GridView>
+                        </div>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class=" offset-md-10 col-md-2 offset-xs-10 col-xs-2">
+                        <div style="padding-bottom: 10px; padding-top: 20px;">
+
+                            <asp:LinkButton runat="server" PostBackUrl="~/Administration/Courses/AjouterCourse.aspx" Text="Ajouter" CssClass="btn btn-primary"></asp:LinkButton>
+                         
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ namespace WebUI.PagesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpContext.Current.Session.Clear();
         }
 
         protected void LoginClick(object sender, EventArgs e)

@@ -17,6 +17,7 @@ namespace BusinessObject
         public DateTime DateFin { get; set; }
 
 
+
         /// <summary>
         /// TODO
         /// </summary>
@@ -32,6 +33,7 @@ namespace BusinessObject
             this.DateDebut = dtDateDebut;
             this.DateFin = dtDateFin;
             this.Ville = strVille;
+           
         }
 
 

@@ -21,7 +21,6 @@ namespace WebUI.PagesWeb.Administration.Courses
             try
             {
                 
-
                 Course course = BLL_Course.course(TB_TITRE_VALUE.Text, TB_DESCRIPTION_VALUE.Text, Convert.ToDateTime(TB_DATE_DEBUT_VALUE.Text), Convert.ToDateTime(TB_DATE_FIN.Text), TB_VILLE_VALUE.Text);
                 BLL_Course.addCourse(course);
             }

@@ -63,7 +63,7 @@ namespace WebUI.PagesWeb.Participant.Courses
             }
             finally
             {
-                Response.Redirect("~/PagesWeb/Courses/ListeCoursesDisponible.aspx");
+                Response.Redirect("~/PagesWeb/Participant/Courses/ListeCoursesDisponible.aspx");
             }
 
         }
@@ -83,7 +83,7 @@ namespace WebUI.PagesWeb.Participant.Courses
             }
             finally
             {
-                Response.Redirect("~/PagesWeb/Courses/ListeCoursesDisponible.aspx");
+                Response.Redirect("~/PagesWeb/Participant/Courses/ListeCoursesDisponible.aspx");
             }
 
         }

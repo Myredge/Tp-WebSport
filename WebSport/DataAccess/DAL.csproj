@@ -43,6 +43,9 @@
     <Compile Include="DAL_Course.cs" />
     <Compile Include="DAL_Participation.cs" />
     <Compile Include="DAL_Personne.cs" />
+    <Compile Include="DA_Courses.cs">
+      <DependentUpon>DA_Courses.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DA_Courses.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

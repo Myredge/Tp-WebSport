@@ -70,6 +70,7 @@
                                         <asp:TextBox runat="server" type="date" CssClass="form-group" ID="TB_DATE_FIN"></asp:TextBox>
                                     </div>
                                 </div>
+                           
 
 
                                 <div class="row">

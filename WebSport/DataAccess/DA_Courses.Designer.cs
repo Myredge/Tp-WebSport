@@ -941,7 +941,7 @@ namespace DAL.DA_CoursesTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Course] WHERE (([Id] = @Original_Id) AND ([Titre] = @Original_Titre) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ([DateStart] = @Original_DateStart) AND ([DateEnd] = @Original_DateEnd) AND ((@IsNull_Ville = 1 AND [Ville] IS NULL) OR ([Ville] = @Original_Ville)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Course] WHERE (([Id] = @Original_Id) AND ([Titre] = @Original_Titre) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ([DateStart] = @Original_DateStart) AND ([DateEnd] = @Original_DateEnd) AND ((@IsNull_Ville = 1 AND [Ville] IS NULL) OR ([Ville] = @Original_Ville)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Titre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Titre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -953,10 +953,9 @@ namespace DAL.DA_CoursesTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ville", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ville", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Course] ([Titre], [Description], [DateStart], [DateEnd], [Vill" +
-                "e]) VALUES (@Titre, @Description, @DateStart, @DateEnd, @Ville);\r\nSELECT Id, Tit" +
-                "re, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id = SCOPE_IDENTIT" +
-                "Y())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Course] ([Titre], [Description], [DateStart], [DateEnd], [Ville]) VA" +
+                "LUES (@Titre, @Description, @DateStart, @DateEnd, @Ville);\r\nSELECT Id, Titre, De" +
+                "scription, DateStart, DateEnd, Ville FROM Course WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Titre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Titre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -965,7 +964,7 @@ namespace DAL.DA_CoursesTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ville", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ville", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Course] SET [Titre] = @Titre, [Description] = @Description, [DateStart] = @DateStart, [DateEnd] = @DateEnd, [Ville] = @Ville WHERE (([Id] = @Original_Id) AND ([Titre] = @Original_Titre) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ([DateStart] = @Original_DateStart) AND ([DateEnd] = @Original_DateEnd) AND ((@IsNull_Ville = 1 AND [Ville] IS NULL) OR ([Ville] = @Original_Ville)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Course] SET [Titre] = @Titre, [Description] = @Description, [DateStart] = @DateStart, [DateEnd] = @DateEnd, [Ville] = @Ville WHERE (([Id] = @Original_Id) AND ([Titre] = @Original_Titre) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ([DateStart] = @Original_DateStart) AND ([DateEnd] = @Original_DateEnd) AND ((@IsNull_Ville = 1 AND [Ville] IS NULL) OR ([Ville] = @Original_Ville)));
 SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Titre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Titre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -997,23 +996,24 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM dbo.Course";
+            this._commandCollection[0].CommandText = "SELECT        Id, Titre, Description, DateStart, DateEnd, Ville\r\nFROM            " +
+                "Course";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, Titre, Description, DateStart, DateEnd, Ville\r\nFROM     Course\r\nWHERE " +
-                " (Id = @Id)";
+            this._commandCollection[1].CommandText = "SELECT DateEnd, DateStart, Description, Id, Titre, Ville FROM Course WHERE (Id = " +
+                "@Id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Id, Titre, Description, DateStart, DateEnd, Ville\r\nFROM     Course\r\nWHERE " +
-                " (GETDATE() BETWEEN DateStart AND DateEnd)";
+            this._commandCollection[2].CommandText = "SELECT DateEnd, DateStart, Description, Id, Titre, Ville FROM Course WHERE (GETDA" +
+                "TE() BETWEEN DateStart AND DateEnd)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        Id, Titre, Description, DateStart, DateEnd, Ville\r\nFROM            " +
-                "Course\r\nWHERE GETDATE() > DateEnd";
+            this._commandCollection[3].CommandText = "SELECT DateEnd, DateStart, Description, Id, Titre, Ville FROM Course WHERE (GETDA" +
+                "TE() > DateEnd)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
@@ -1022,7 +1022,7 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT * FROM dbo.Course";
+            this._commandCollection[5].CommandText = "SELECT DateEnd, DateStart, Description, Id, Titre, Ville FROM Course";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
         }
         

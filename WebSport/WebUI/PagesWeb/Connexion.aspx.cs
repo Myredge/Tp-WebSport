@@ -19,32 +19,26 @@ namespace WebUI.PagesWeb
         protected void LoginClick(object sender, EventArgs e)
 
         {
-            try
-            {
-                Personne persConnecte = BLL_Personne.getPersonneConnecté(TB_EMAIL_VALUE.Text, TB_PASSWORD_VALUE.Text);
-                
-                if (persConnecte.bIsAdmin != true)
-                {
-                    
-                    string IDvariable = "ID";
-                    HttpContext.Current.Session.Add(IDvariable, persConnecte);
+            Personne persConnecte = BLL_Personne.getPersonneConnecté(TB_EMAIL_VALUE.Text, TB_PASSWORD_VALUE.Text);
 
-                    Response.Redirect("~/PagesWeb/Participant/Dashboard.aspx");
-                }
-                else
-                {
-                    Response.Redirect("~/Administration/Dashboard.aspx");
-                }
+            if (!persConnecte.bIsAdmin && persConnecte.bActif)
+            {
 
+                string IDvariable = "ID";
+                HttpContext.Current.Session.Add(IDvariable, persConnecte);
+
+                Response.Redirect("~/PagesWeb/Participant/Dashboard.aspx");
             }
-            catch
+            else if (persConnecte.bIsAdmin && persConnecte.bActif)
             {
-               // Response.Redirect("~/PagesWeb/Connexion.aspx");
+                Response.Redirect("~/Administration/Dashboard.aspx");
             }
-            finally
+            else
             {
-              
+                // TODO : Ajouter une alerte JS : Erreur
+                Response.Redirect("~/PagesWeb/Participant/Connexion.aspx");
             }
+
 
 
         }

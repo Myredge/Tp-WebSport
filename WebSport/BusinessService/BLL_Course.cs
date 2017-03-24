@@ -33,6 +33,11 @@ namespace BusinessService
 
             return courses;
         }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <returns></returns>
         public static List<Course> ListeCoursesDisponibles()
         {
             List<Course> courses = new List<Course>();
@@ -40,16 +45,19 @@ namespace BusinessService
 
             foreach (DataRow oRow in dt)
             {
-                Course course = new Course(oRow["Titre"].ToString(), oRow["Description"].ToString(),
-                 Convert.ToDateTime(oRow["DateStart"].ToString()),
-                    Convert.ToDateTime(oRow["DateEnd"].ToString()), oRow["Ville"].ToString()
-                    );
+                Course course = new Course(Convert.ToInt32(oRow["Id"]), oRow["Titre"].ToString(), oRow["Description"].ToString(),
+             Convert.ToDateTime(oRow["DateStart"].ToString()), Convert.ToDateTime(oRow["DateEnd"].ToString()), oRow["Ville"].ToString());
 
                 courses.Add(course);
             }
 
             return courses;
         }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <returns></returns>
         public static List<Course> ListeCoursesTerminees()
         {
             List<Course> courses = new List<Course>();
@@ -94,14 +102,20 @@ namespace BusinessService
             DAL_Course.Insert(course.Titre, course.Description, course.DateDebut, course.DateFin, course.Ville);
         }
 
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="nIdCourse"></param>
+        /// <returns></returns>
         public static Course getCourse(int nIdCourse)
         {
             DataRow oRow = DAL_Course.DonneCoursePourId(nIdCourse)[0];
 
-            Course course = new Course(oRow["Titre"].ToString(), oRow["Description"].ToString(),
-                 Convert.ToDateTime(oRow["DateDebut"].ToString()),
-                    Convert.ToDateTime(oRow["DateFin"].ToString()), oRow["Ville"].ToString());
-
+            Course course = new Course(Convert.ToInt32(oRow["Id"]), oRow["Titre"].ToString(), oRow["Description"].ToString(),
+                 Convert.ToDateTime(oRow["DateStart"].ToString()),
+                    Convert.ToDateTime(oRow["DateEnd"].ToString()), oRow["Ville"].ToString());
+                
             return course;
         }
     }

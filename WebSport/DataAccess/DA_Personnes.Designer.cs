@@ -539,7 +539,7 @@ namespace DAL {
                 this.columnEmail.MaxLength = 500;
                 this.columnTelephone.MaxLength = 10;
                 this.columnMotDePasse.MaxLength = 50;
-                this.columnSexe.MaxLength = 5;
+                this.columnSexe.MaxLength = 6;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -49,7 +49,6 @@
                                         <div class="col-md-4">
                                             <asp:Button runat="server" CssClass="btn btn-primary" Text="Se connecter" OnClick="LoginClick" />
 
-
                                         </div>
                                         <div class="offset-md-4 col-md-4  col-xs-4 offset-xs-8">
                                             <asp:LinkButton runat="server" PostBackUrl="Inscription.aspx" Text="Pas de compte ?" CssClass=""></asp:LinkButton>

@@ -27,11 +27,11 @@ namespace WebUI.PagesWeb
             }
             catch
             {
-
+                    
             }
             finally
             {
-                Response.Redirect("~/Administration/Membres/ListeMembres.aspx");
+                Response.Redirect("~/PagesWeb/Connexion.aspx");
             }
 
 

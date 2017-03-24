@@ -38,7 +38,29 @@ namespace BusinessObject
             this.bActif = true;
             this.bIsAdmin = false;
         }
-  
+
+        /// <summary>
+        /// Constructeur lors de la connexion
+        /// </summary>
+        /// <param name="strNom"></param>
+        /// <param name="strPrenom"></param>
+        /// <param name="strEmail"></param>
+        /// <param name="strMotDePasse"></param>
+        /// <param name="strSexe"></param>
+        /// <param name="bActif"></param>
+        /// <param name="bIsAdmin"></param>
+        public Personne(string strNom, string strPrenom, string strEmail, string strMotDePasse, string strSexe, bool bActif, bool bIsAdmin)
+        {
+            this.Nom = strNom;
+            this.Prenom = strPrenom;
+            this.Email = strEmail;
+            this.MotDePasse = strMotDePasse;
+            this.bActif = bActif;
+            this.Sexe = strSexe;
+            this.bActif = bActif;
+            this.bIsAdmin = bIsAdmin;
+        }
+
         /// <summary>
         /// Constructeur lors de création de compte côté admin
         /// </summary>

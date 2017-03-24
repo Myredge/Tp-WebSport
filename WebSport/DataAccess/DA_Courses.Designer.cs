@@ -953,14 +953,14 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM dbo.Course\r\nWHERE I" +
-                "d=@Id";
+            this._commandCollection[1].CommandText = "SELECT Id, Titre, Description, DateStart, DateEnd, Ville\r\nFROM     Course\r\nWHERE " +
+                " (Id = @Id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Id, Titre, Description, DateStart, DateEnd, Ville\r\nFROM            " +
-                "Course\r\nWHERE        (GETDATE() BETWEEN DateStart AND DateEnd)";
+            this._commandCollection[2].CommandText = "SELECT Id, Titre, Description, DateStart, DateEnd, Ville\r\nFROM     Course\r\nWHERE " +
+                " (GETDATE() BETWEEN DateStart AND DateEnd)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;

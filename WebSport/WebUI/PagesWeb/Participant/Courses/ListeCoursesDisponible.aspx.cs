@@ -30,5 +30,7 @@ namespace WebUI.PagesWeb.Participant.Courses
             GV_LISTE_COURSE_DISPONIBLE.PageIndex = e.NewPageIndex;
             this.BindGrid();
         }
+
+      
     }
 }

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="../../Style/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../Style/css/Site.css" rel="stylesheet" />
     <title></title>
@@ -12,7 +12,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-      <form id="form1" runat="server">
+    <form id="form1" runat="server">
         <div class="ws_wrapper"></div>
         <div id="header" class="header">
             <div class="row">
@@ -21,7 +21,9 @@
                 </div>
                 <div class="col-md-6"></div>
                 <div class="col-md-2">
-                    <label style="color: white; font-size: 16px; padding-left: 10px;">Bienvenue xxx </label>
+
+                    <asp:LinkButton runat="server" Style="color: white; font-size: 16px; padding-left: 10px;" PostBackUrl="~/PagesWeb/Connexion.aspx" Text="Déconnexion"></asp:LinkButton>
+
                 </div>
 
             </div>
@@ -29,7 +31,7 @@
         <div id="menuContainer" class="ws-main-menu">
             <div class="sidebar-collapse">
                 <ul id="menu" class="ws-first-level">
-                     <li>
+                    <li>
                         <asp:HyperLink runat="server" NavigateUrl="~/PagesWeb/Participant/Dashboard.aspx" Text="Tableau de Bord"></asp:HyperLink>
 
                     </li>
@@ -38,7 +40,7 @@
 
                     </li>
                     <li>
-                        <asp:HyperLink runat="server" NavigateUrl="~/PagesWeb/Participant/Courses/ListeCoursesTerminees.aspx" Text="Courses Terminées"></asp:HyperLink>
+                      <%--  <asp:HyperLink runat="server" NavigateUrl="~/PagesWeb/Participant/Courses/ListeCoursesTerminees.aspx" Text="Courses Terminées"></asp:HyperLink>--%>
 
                     </li>
                 </ul>

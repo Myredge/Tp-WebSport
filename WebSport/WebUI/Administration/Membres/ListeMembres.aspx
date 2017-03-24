@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administration/MasterPageAdmin.Master" AutoEventWireup="true" CodeBehind="ListeMembres.aspx.cs" Inherits="WebUI.Administration.Membres.ListeMembres" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title> Liste des membres</title>
+    <title>Liste des membres</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
                             <asp:GridView runat="server" ID="GV_LISTE_MEMBRE" AutoGenerateColumns="false" AllowPaging="true"
-                                OnPageIndexChanging="OnPageIndexChanging" PageSize="25" CssClass="table table-bordered">
+                                OnPageIndexChanging="OnPageIndexChanging" PageSize="10" CssClass="table table-bordered">
                                 <Columns>
                                     <asp:BoundField ItemStyle-Width="30%" DataField="Nom" HeaderText="Nom" />
                                     <asp:BoundField ItemStyle-Width="30%" DataField="Prenom" HeaderText="Prenom" />
@@ -38,6 +38,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class=" offset-md-10 col-md-2 offset-xs-10 col-xs-2">
+                        <div style="padding-bottom: 10px; padding-top: 20px;">
+
+                            <asp:LinkButton runat="server" PostBackUrl="~/Administration/Membres/AjouterMembre.aspx" Text="Ajouter" CssClass="btn btn-primary"></asp:LinkButton>
+                         
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

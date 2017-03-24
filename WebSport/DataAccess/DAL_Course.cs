@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +59,11 @@ namespace DAL
         public static DA_Courses.CourseDataTable DonneCoursePourId(int nIdCourse)
         {
             return new DA_CoursesTableAdapters.CourseTableAdapter().DonneCoursePourID(nIdCourse);
+        }
+
+        public static DataTable DonneNombreCoursesDispoParVille()
+        {
+            return new DA_CoursesTableAdapters.CourseTableAdapter().DonneNombreCoursesDispoParVille();
         }
 
     }

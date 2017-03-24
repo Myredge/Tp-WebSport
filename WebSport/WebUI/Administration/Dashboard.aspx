@@ -8,7 +8,7 @@
 
     <script type="text/javascript">
 
-        
+
         var data = '<%=DonneStatsMembre()%>';
         var DataProvider = JSON.parse(data);
 
@@ -25,6 +25,13 @@
                      "align": "center",
                      "markerType": "circle"
                  },
+
+                 "titles": [
+                     {
+                         "id": "title",
+                         "text": "Nombre de Membres"
+                     }
+                 ],
                  "dataProvider": DataProvider
              }
          );
@@ -32,12 +39,16 @@
     <!-- Chart Div Deux -->
     <script type="text/javascript">
 
+        
+        var data = '<%=DonneStatsCourses()%>';
+        var DataProvider = JSON.parse(data);
+
         AmCharts.makeChart("chartdivdeux",
             {
                 "type": "pie",
                 "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
                 "titleField": "category",
-                "valueField": "column-1",
+                "valueField": "value",
                 "allLabels": [],
                 "balloon": {},
                 "legend": {
@@ -45,91 +56,15 @@
                     "align": "center",
                     "markerType": "circle"
                 },
-                "dataProvider": [
+                "titles": [
                     {
-                        "category": "category 1",
-                        "column-1": 8
-                    },
-                    {
-                        "category": "category 2",
-                        "column-1": 6
-                    },
-                    {
-                        "category": "category 3",
-                        "column-1": 2
+                        "id": "title",
+                        "text": "Courses Disponibles par Ville"
                     }
-                ]
+                ],
+                "dataProvider": DataProvider
             }
         );
-    </script>
-    <!-- Colonne -->
-    <script type="text/javascript">
-        AmCharts.makeChart("chartdivcol",
-				{
-				    "type": "serial",
-				    "categoryField": "category",
-				    "startDuration": 1,
-				    "categoryAxis": {
-				        "gridPosition": "start"
-				    },
-				    "trendLines": [],
-				    "graphs": [
-						{
-						    "balloonText": "[[title]] of [[category]]:[[value]]",
-						    "fillAlphas": 1,
-						    "id": "AmGraph-1",
-						    "title": "graph 1",
-						    "type": "column",
-						    "valueField": "column-1"
-						},
-						{
-						    "balloonText": "[[title]] of [[category]]:[[value]]",
-						    "fillAlphas": 1,
-						    "id": "AmGraph-2",
-						    "title": "graph 2",
-						    "type": "column",
-						    "valueField": "column-2"
-						}
-				    ],
-				    "guides": [],
-				    "valueAxes": [
-						{
-						    "id": "ValueAxis-1",
-						    "title": "Axis title"
-						}
-				    ],
-				    "allLabels": [],
-				    "balloon": {},
-				    "legend": {
-				        "enabled": true,
-				        "useGraphSettings": true
-				    },
-				    "titles": [
-						{
-						    "id": "Title-1",
-						    "size": 15,
-						    "text": "Chart Title"
-						}
-				    ],
-				    "dataProvider": [
-						{
-						    "category": "category 1",
-						    "column-1": 8,
-						    "column-2": 5
-						},
-						{
-						    "category": "category 2",
-						    "column-1": 6,
-						    "column-2": 7
-						},
-						{
-						    "category": "category 3",
-						    "column-1": 2,
-						    "column-2": 3
-						}
-				    ]
-				}
-			);
     </script>
 
 
@@ -166,12 +101,6 @@
                                 <div id="chartdivdeux" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <br />
-                <div class="row" style="padding-bottom: 20px;">
-                    <div class="col-md-12 col-xs-12">
-                        <div id="chartdivcol" style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
                     </div>
                 </div>
 

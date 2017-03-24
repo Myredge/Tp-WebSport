@@ -478,11 +478,8 @@ namespace DAL {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnTitre.AllowDBNull = false;
                 this.columnTitre.MaxLength = 100;
                 this.columnDescription.MaxLength = 100;
-                this.columnDateStart.AllowDBNull = false;
-                this.columnDateEnd.AllowDBNull = false;
                 this.columnVille.MaxLength = 100;
             }
             
@@ -639,7 +636,12 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Titre {
                 get {
-                    return ((string)(this[this.tableCourse.TitreColumn]));
+                    try {
+                        return ((string)(this[this.tableCourse.TitreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Titre\' dans la table \'Course\' est DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCourse.TitreColumn] = value;
@@ -666,7 +668,12 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime DateStart {
                 get {
-                    return ((global::System.DateTime)(this[this.tableCourse.DateStartColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCourse.DateStartColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateStart\' dans la table \'Course\' est DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCourse.DateStartColumn] = value;
@@ -677,7 +684,12 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime DateEnd {
                 get {
-                    return ((global::System.DateTime)(this[this.tableCourse.DateEndColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCourse.DateEndColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateEnd\' dans la table \'Course\' est DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCourse.DateEndColumn] = value;
@@ -702,6 +714,18 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTitreNull() {
+                return this.IsNull(this.tableCourse.TitreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTitreNull() {
+                this[this.tableCourse.TitreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDescriptionNull() {
                 return this.IsNull(this.tableCourse.DescriptionColumn);
             }
@@ -710,6 +734,30 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDescriptionNull() {
                 this[this.tableCourse.DescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateStartNull() {
+                return this.IsNull(this.tableCourse.DateStartColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateStartNull() {
+                this[this.tableCourse.DateStartColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateEndNull() {
+                return this.IsNull(this.tableCourse.DateEndColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateEndNull() {
+                this[this.tableCourse.DateEndColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -946,7 +994,7 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM dbo.Course";
@@ -969,8 +1017,13 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT * FROM dbo.Course";
+            this._commandCollection[4].CommandText = "SELECT        COUNT(Ville) AS nb, Ville\r\nFROM            Course\r\nWHERE        (GE" +
+                "TDATE() BETWEEN DateStart AND DateEnd)\r\nGROUP BY Ville";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT * FROM dbo.Course";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1035,8 +1088,19 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DA_Courses.CourseDataTable DonneToutes() {
+        public virtual DA_Courses.CourseDataTable DonneNombreCoursesDispoParVille() {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            DA_Courses.CourseDataTable dataTable = new DA_Courses.CourseDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DA_Courses.CourseDataTable DonneToutes() {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             DA_Courses.CourseDataTable dataTable = new DA_Courses.CourseDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1075,10 +1139,10 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Titre, string Original_Description, System.DateTime Original_DateStart, System.DateTime Original_DateEnd, string Original_Ville) {
+        public virtual int Delete(int Original_Id, string Original_Titre, string Original_Description, global::System.Nullable<global::System.DateTime> Original_DateStart, global::System.Nullable<global::System.DateTime> Original_DateEnd, string Original_Ville) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Titre == null)) {
-                throw new global::System.ArgumentNullException("Original_Titre");
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Titre));
@@ -1091,8 +1155,18 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Description));
             }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DateStart));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_DateEnd));
+            if ((Original_DateStart.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DateStart.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DateEnd.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_DateEnd.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             if ((Original_Ville == null)) {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
@@ -1121,9 +1195,9 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Titre, string Description, System.DateTime DateStart, System.DateTime DateEnd, string Ville) {
+        public virtual int Insert(string Titre, string Description, global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd, string Ville) {
             if ((Titre == null)) {
-                throw new global::System.ArgumentNullException("Titre");
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Titre));
@@ -1134,8 +1208,18 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Description));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateStart));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DateEnd));
+            if ((DateStart.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateStart.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((DateEnd.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DateEnd.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             if ((Ville == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
@@ -1162,9 +1246,9 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Titre, string Description, System.DateTime DateStart, System.DateTime DateEnd, string Ville, int Original_Id, string Original_Titre, string Original_Description, System.DateTime Original_DateStart, System.DateTime Original_DateEnd, string Original_Ville, int Id) {
+        public virtual int Update(string Titre, string Description, global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd, string Ville, int Original_Id, string Original_Titre, string Original_Description, global::System.Nullable<global::System.DateTime> Original_DateStart, global::System.Nullable<global::System.DateTime> Original_DateEnd, string Original_Ville, int Id) {
             if ((Titre == null)) {
-                throw new global::System.ArgumentNullException("Titre");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Titre));
@@ -1175,8 +1259,18 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Description));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateStart));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(DateEnd));
+            if ((DateStart.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateStart.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((DateEnd.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(DateEnd.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             if ((Ville == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
@@ -1185,7 +1279,7 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
             if ((Original_Titre == null)) {
-                throw new global::System.ArgumentNullException("Original_Titre");
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Titre));
@@ -1198,8 +1292,18 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Description));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_DateStart));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DateEnd));
+            if ((Original_DateStart.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_DateStart.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DateEnd.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DateEnd.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             if ((Original_Ville == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
@@ -1229,7 +1333,7 @@ SELECT Id, Titre, Description, DateStart, DateEnd, Ville FROM Course WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Titre, string Description, System.DateTime DateStart, System.DateTime DateEnd, string Ville, int Original_Id, string Original_Titre, string Original_Description, System.DateTime Original_DateStart, System.DateTime Original_DateEnd, string Original_Ville) {
+        public virtual int Update(string Titre, string Description, global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd, string Ville, int Original_Id, string Original_Titre, string Original_Description, global::System.Nullable<global::System.DateTime> Original_DateStart, global::System.Nullable<global::System.DateTime> Original_DateEnd, string Original_Ville) {
             return this.Update(Titre, Description, DateStart, DateEnd, Ville, Original_Id, Original_Titre, Original_Description, Original_DateStart, Original_DateEnd, Original_Ville, Original_Id);
         }
     }

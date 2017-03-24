@@ -31,7 +31,26 @@ namespace BusinessService
 
             string Json = Common.Utilitaire.DataTableToJsonWithJsonNet(TableStats);
             
-           
+            return Json;
+        }
+
+        public static string NombreCoursesDipoParVille()
+        {
+            DataTable dt = DAL_Course.DonneNombreCoursesDispoParVille();
+
+            DataTable TableStats = new DataTable();
+            TableStats.Columns.Add("category", typeof(string));
+            TableStats.Columns.Add("value", typeof(Int32));
+
+            foreach (DataRow oRow in dt.Rows)
+            {
+
+                object[] o = { oRow["Ville"].ToString(), oRow["nb"] };
+                TableStats.Rows.Add(o);
+            }
+
+
+            string Json = Common.Utilitaire.DataTableToJsonWithJsonNet(TableStats);
 
             return Json;
         }
